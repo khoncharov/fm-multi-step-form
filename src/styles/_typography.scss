@@ -1,0 +1,25 @@
+$font-family-stack: "Ubuntu", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./assets/fonts/Ubuntu-Regular.ttf");
+  font-weight: $font-weight-regular;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./assets/fonts/Ubuntu-Medium.ttf");
+  font-weight: $font-weight-medium;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./assets/fonts/Ubuntu-Bold.ttf");
+  font-weight: $font-weight-bold;
+}
+
+$font-size-p: 1.6rem;

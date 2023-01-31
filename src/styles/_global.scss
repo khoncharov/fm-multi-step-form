@@ -8,13 +8,15 @@
 
 html {
   font-size: 10px;
-  // font-family: $font-family-content;
+  font-family: $font-family-stack;
 }
 
 body {
   background-color: $magnolia;
-  font-size: 1.6rem;
-  // @include font();
+  font-size: $font-size-p;
+  font-weight: $font-weight-regular;
+  line-height: 1;
+  color: $cool-gray;
 }
 
 a {
@@ -23,6 +25,7 @@ a {
 
 button {
   border: none;
+  font: inherit;
 }
 
 li {
