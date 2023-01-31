@@ -10,14 +10,31 @@
   <body>
     <div id="app">
       <form class="form" id="form" novalidate>
-        <div class="form__progress-bar"></div>
+        <ul class="form__sidebar">
+          <li class="sidebar-item">
+            <div class="sidebar-item__num sidebar-item_active">1</div>
+            <div class="sidebar-item__caption">Step 1</div>
+            <div class="sidebar-item__description">Your info</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">2</div>
+            <div class="sidebar-item__caption">Step 2</div>
+            <div class="sidebar-item__description">Select plan</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">3</div>
+            <div class="sidebar-item__caption">Step 3</div>
+            <div class="sidebar-item__description">Add-ons</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">4</div>
+            <div class="sidebar-item__caption">Step 4</div>
+            <div class="sidebar-item__description">Summary</div>
+          </li>
+        </ul>
         <section class="form__content">
-          <h2 class="form__step-heading">Step header</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non atque nostrum quam dolores
-            id! Accusantium recusandae totam quia officiis, voluptas fugit quo facilis voluptates
-            enim perspiciatis nesciunt sequi consectetur non.
-          </p>
+          <h2 class="form__heading">Personal info</h2>
+          <p class="form__context">Please provide your name, email address, and phone number.</p>
         </section>
         <nav class="form__controls">
           <button class="btn" id="form-btn-back" type="button">
