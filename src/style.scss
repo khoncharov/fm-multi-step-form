@@ -1,4 +1,6 @@
-#app {
-  font-size: 32px;
-  background-color: tomato;
-}
+@import "./styles/variables";
+@import "./styles/typography";
+@import "./styles/global";
+
+@import "./styles/form";
+@import "./styles/footer";
