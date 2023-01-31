@@ -14,7 +14,7 @@
     border-radius: 1.6rem;
     padding: 1.6rem;
     background-color: $white;
-    box-shadow: 2px 4px 24px 0px $light-gray;
+    box-shadow: 2px 10px 24px -7px $light-gray;
   }
 
   &__progress-bar {
@@ -40,7 +40,7 @@
     height: max-content;
     border-radius: 1rem;
     background-color: $white;
-    box-shadow: 0px 10px 20px -7px $light-gray;
+    box-shadow: 0px 5px 20px -7px $light-gray;
 
     @media screen and (min-width: $width-switch-point) {
       grid-row: 1 / 2;
