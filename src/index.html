@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="app">
-      <form class="form" id="form" novalidate>
+      <form class="form" id="form" novalidate autocomplete="off">
         <ul class="form__sidebar">
           <li class="sidebar-item">
             <div class="sidebar-item__num sidebar-item_active">1</div>
@@ -35,6 +35,37 @@
         <section class="form__content">
           <h2 class="form__heading">Personal info</h2>
           <p class="form__context">Please provide your name, email address, and phone number.</p>
+
+          <div class="form__input-wrapper">
+            <label class="form__input-label" for="form-input-name">Name</label>
+            <div class="form__input-error" id="form-input-name-err">This field is required</div>
+            <input
+              class="form__input"
+              id="form-input-name"
+              type="text"
+              placeholder="e.g. Stephen King"
+            />
+          </div>
+          <div class="form__input-wrapper">
+            <label class="form__input-label" for="form-input-email">Email Address</label>
+            <div class="form__input-error" id="form-input-email-err">This field is required</div>
+            <input
+              class="form__input"
+              id="form-input-email"
+              type="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+          </div>
+          <div class="form__input-wrapper">
+            <label class="form__input-label" for="form-input-tel">Phone Number</label>
+            <div class="form__input-error" id="form-input-tel-err">This field is required</div>
+            <input
+              class="form__input invalid-field"
+              id="form-input-tel"
+              type="tel"
+              placeholder="e.g. +1 234 567 890"
+            />
+          </div>
         </section>
         <nav class="form__controls">
           <button class="btn" id="form-btn-back" type="button">
