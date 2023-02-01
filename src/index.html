@@ -12,7 +12,7 @@
       <form class="form" id="form" novalidate autocomplete="off">
         <ul class="form__sidebar">
           <li class="sidebar-item">
-            <div class="sidebar-item__num sidebar-item_active">1</div>
+            <div class="sidebar-item__num">1</div>
             <div class="sidebar-item__caption">Step 1</div>
             <div class="sidebar-item__description">Your info</div>
           </li>
@@ -32,41 +32,7 @@
             <div class="sidebar-item__description">Summary</div>
           </li>
         </ul>
-        <section class="form__content">
-          <h2 class="form__heading">Personal info</h2>
-          <p class="form__context">Please provide your name, email address, and phone number.</p>
-
-          <div class="form__input-wrapper">
-            <label class="form__input-label" for="form-input-name">Name</label>
-            <div class="form__input-error" id="form-input-name-err">This field is required</div>
-            <input
-              class="form__input"
-              id="form-input-name"
-              type="text"
-              placeholder="e.g. Stephen King"
-            />
-          </div>
-          <div class="form__input-wrapper">
-            <label class="form__input-label" for="form-input-email">Email Address</label>
-            <div class="form__input-error" id="form-input-email-err">This field is required</div>
-            <input
-              class="form__input"
-              id="form-input-email"
-              type="email"
-              placeholder="e.g. stephenking@lorem.com"
-            />
-          </div>
-          <div class="form__input-wrapper">
-            <label class="form__input-label" for="form-input-tel">Phone Number</label>
-            <div class="form__input-error" id="form-input-tel-err">This field is required</div>
-            <input
-              class="form__input invalid-field"
-              id="form-input-tel"
-              type="tel"
-              placeholder="e.g. +1 234 567 890"
-            />
-          </div>
-        </section>
+        <section class="form__content"></section>
         <nav class="form__controls">
           <button class="btn" id="form-btn-back" type="button">
             <span class="btn__text-back">Go Back</span>
@@ -78,6 +44,64 @@
       </form>
 
       <div class="attribution">Temp footer content</div>
+
+      <template id="form-step-1">
+        <h2 class="form__heading">Personal info</h2>
+        <p class="form__context">Please provide your name, email address, and phone number.</p>
+        <div class="form__input-wrapper">
+          <label class="form__input-label" for="form-input-name">Name</label>
+          <div class="form__input-error" id="form-input-name-err">This field is required</div>
+          <input
+            class="form__input"
+            id="form-input-name"
+            type="text"
+            placeholder="e.g. Stephen King"
+          />
+        </div>
+        <div class="form__input-wrapper">
+          <label class="form__input-label" for="form-input-email">Email Address</label>
+          <div class="form__input-error" id="form-input-email-err">This field is required</div>
+          <input
+            class="form__input"
+            id="form-input-email"
+            type="email"
+            placeholder="e.g. stephenking@lorem.com"
+          />
+        </div>
+        <div class="form__input-wrapper">
+          <label class="form__input-label" for="form-input-tel">Phone Number</label>
+          <div class="form__input-error" id="form-input-tel-err">This field is required</div>
+          <input
+            class="form__input invalid-field"
+            id="form-input-tel"
+            type="tel"
+            placeholder="e.g. +1 234 567 890"
+          />
+        </div>
+      </template>
+
+      <template id="form-step-2">
+        <h2 class="form__heading">Select your plan</h2>
+        <p class="form__context">You have the option of monthly or yearly billing.</p>
+      </template>
+
+      <template id="form-step-3">
+        <h2 class="form__heading">Pick add-ons</h2>
+        <p class="form__context">Add-ons help enhance your gaming experience.</p>
+      </template>
+
+      <template id="form-step-4">
+        <h2 class="form__heading">Finishing up</h2>
+        <p class="form__context">Double-check everything looks OK before confirming.</p>
+      </template>
+
+      <template id="form-step-5">
+        <h2 class="form__heading">Thank you!</h2>
+        <p class="form__context">
+          Thanks for confirming your subscription! We hope you have fun using our platform. If you
+          ever need support, please feel free to email us at support@loremgaming.com.
+        </p>
+      </template>
     </div>
   </body>
 </html>

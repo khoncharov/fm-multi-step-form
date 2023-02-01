@@ -64,8 +64,8 @@
     grid-column: 1 / 4;
     padding: 1.6rem;
     background-color: $white;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     box-shadow: 0px 0px 20px -7px $light-gray;
 
     @media screen and (min-width: $width-switch-point) {

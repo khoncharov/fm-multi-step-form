@@ -39,6 +39,8 @@
 }
 
 .btn-next {
+  grid-column: 2;
+  justify-self: flex-end;
   background-color: $marine-blue;
 }
 
@@ -49,4 +51,8 @@
 .btn:focus-visible {
   outline: 0.2rem dashed $strawberry-red;
   outline-offset: 0.2rem;
+}
+
+.btn-confirm {
+  background-color: $purplish-blue;
 }
