@@ -1,5 +1,5 @@
-import { FormStep } from './types';
-import AppView from './view';
+import { FormStep } from '../types';
+import AppView from '../view/view';
 
 export default class AppController {
   private step: FormStep = FormStep.STEP1;

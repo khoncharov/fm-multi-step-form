@@ -36,4 +36,5 @@ export interface PlanDataType extends User {
   plan: MembershipPlan;
   paymentPeriod: PaymentPeriod;
   addons: AdditionalService[];
+  getTotal: () => number;
 }

@@ -4,10 +4,11 @@ import {
   BTN_LABEL_NEXT,
   FORM_STEPS_NUMBER,
   sideBarActiveClass,
-} from './const';
-import { FormStep } from './types';
+} from '../const';
+import FormView from './form-view';
+import { FormStep } from '../types';
 
-export default class AppView {
+export default class AppView extends FormView {
   private sidebarNodes = document.querySelectorAll(
     '.sidebar-item__num',
   ) as NodeListOf<HTMLDivElement>;
@@ -19,6 +20,8 @@ export default class AppView {
   private formSteps: HTMLElement[];
 
   constructor() {
+    super();
+
     this.formSteps = Array(FORM_STEPS_NUMBER)
       .fill(0)
       .map((i, index) => {
