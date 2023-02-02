@@ -8,4 +8,5 @@ module.exports = {
   rules: {
     'global-strict': 0,
   },
+  ignorePatterns: ['webpack*.js'],
 };
