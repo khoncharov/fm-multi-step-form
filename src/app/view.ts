@@ -1,7 +1,8 @@
 import {
-  btnConfirmClass, //
+  btnConfirmClass,
   BTN_LABEL_CONFIRM,
   BTN_LABEL_NEXT,
+  FORM_STEPS_NUMBER,
   sideBarActiveClass,
 } from './const';
 import { FormStep } from './types';
@@ -15,7 +16,16 @@ export default class AppView {
 
   public btnNext = document.querySelector('#form-btn-next') as HTMLButtonElement;
 
-  private formContainer = document.querySelector('.form__content') as HTMLElement;
+  private formSteps: HTMLElement[];
+
+  constructor() {
+    this.formSteps = Array(FORM_STEPS_NUMBER)
+      .fill(0)
+      .map((i, index) => {
+        const elem = document.querySelector(`#form-step-${index + 1}`) as HTMLElement;
+        return elem;
+      });
+  }
 
   drawStep(step: FormStep): void {
     this.updateSidebar(step);
@@ -63,10 +73,11 @@ export default class AppView {
   }
 
   updateForm(step: FormStep): void {
-    this.formContainer.innerHTML = '';
+    this.formSteps.forEach((i) => {
+      // eslint-disable-next-line no-param-reassign
+      i.style.display = 'none';
+    });
 
-    const fragment = document.querySelector(`#form-step-${step}`) as HTMLTemplateElement;
-
-    this.formContainer.append(fragment.content.cloneNode(true));
+    this.formSteps[step - 1].style.display = 'block';
   }
 }

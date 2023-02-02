@@ -5,3 +5,5 @@ export const invalidFieldClass = 'invalid-field';
 export const btnConfirmClass = 'btn-confirm';
 export const BTN_LABEL_CONFIRM = 'Confirm';
 export const BTN_LABEL_NEXT = 'Next Step';
+
+export const FORM_STEPS_NUMBER = 5;

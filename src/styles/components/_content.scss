@@ -100,3 +100,7 @@
   border-color: $strawberry-red;
   background-color: rgba($strawberry-red, 0.02);
 }
+
+div[id^="form-step-"] {
+  display: none;
+}

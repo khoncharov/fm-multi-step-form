@@ -2,7 +2,7 @@ import { FormStep } from './types';
 import AppView from './view';
 
 export default class AppController {
-  public step: FormStep = FormStep.STEP1;
+  private step: FormStep = FormStep.STEP1;
 
   getStep(view: AppView, step: FormStep): void {
     this.step = step;
