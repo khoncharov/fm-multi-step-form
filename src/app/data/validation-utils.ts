@@ -17,3 +17,19 @@ export const isInvalidEmail = (value: string): boolean => {
 };
 
 export const isInvalidPhone = (value: string): boolean => !/^\+[0-9]{10,}$/.test(value);
+
+export const formatUsername = (value: string): string => {
+  const res = value
+    .trim()
+    .split(/-+/)
+    .map((i) => i.trim())
+    .join('-')
+    .split(/\s+/)
+    .join(' ');
+
+  return res;
+};
+
+export const formatEmail = (value: string): string => value.trim();
+
+export const formatPhone = (value: string): string => value.trim().split(/\s+/).join('');
