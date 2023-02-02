@@ -32,35 +32,36 @@
             <div class="sidebar-item__description">Summary</div>
           </li>
         </ul>
+
         <section class="form__content">
           <div id="form-step-1">
-            <h2 class="form__heading">Personal info</h2>
-            <p class="form__context">Please provide your name, email address, and phone number.</p>
-            <div class="form__input-wrapper">
-              <label class="form__input-label" for="form-input-name">Name</label>
-              <div class="form__input-error" id="form-input-name-err"></div>
+            <h2 class="step1__heading">Personal info</h2>
+            <p class="step1__context">Please provide your name, email address, and phone number.</p>
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-name">Name</label>
+              <div class="step1__input-error" id="form-input-name-err"></div>
               <input
-                class="form__input"
+                class="step1__input"
                 id="form-input-name"
                 type="text"
                 placeholder="e.g. Stephen King"
               />
             </div>
-            <div class="form__input-wrapper">
-              <label class="form__input-label" for="form-input-email">Email Address</label>
-              <div class="form__input-error" id="form-input-email-err"></div>
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-email">Email Address</label>
+              <div class="step1__input-error" id="form-input-email-err"></div>
               <input
-                class="form__input"
+                class="step1__input"
                 id="form-input-email"
                 type="email"
                 placeholder="e.g. stephenking@lorem.com"
               />
             </div>
-            <div class="form__input-wrapper">
-              <label class="form__input-label" for="form-input-tel">Phone Number</label>
-              <div class="form__input-error" id="form-input-tel-err"></div>
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-tel">Phone Number</label>
+              <div class="step1__input-error" id="form-input-tel-err"></div>
               <input
-                class="form__input"
+                class="step1__input"
                 id="form-input-tel"
                 type="tel"
                 placeholder="e.g. +1 234 567 890"
@@ -69,28 +70,30 @@
           </div>
 
           <div id="form-step-2">
-            <h2 class="form__heading">Select your plan</h2>
-            <p class="form__context">You have the option of monthly or yearly billing.</p>
+            <h2 class="step1__heading">Select your plan</h2>
+            <p class="step1__context">You have the option of monthly or yearly billing.</p>
           </div>
 
           <div id="form-step-3">
-            <h2 class="form__heading">Pick add-ons</h2>
-            <p class="form__context">Add-ons help enhance your gaming experience.</p>
+            <h2 class="step1__heading">Pick add-ons</h2>
+            <p class="step1__context">Add-ons help enhance your gaming experience.</p>
           </div>
 
           <div id="form-step-4">
-            <h2 class="form__heading">Finishing up</h2>
-            <p class="form__context">Double-check everything looks OK before confirming.</p>
+            <h2 class="step1__heading">Finishing up</h2>
+            <p class="step1__context">Double-check everything looks OK before confirming.</p>
           </div>
 
-          <div id="form-step-5">
-            <h2 class="form__heading">Thank you!</h2>
-            <p class="form__context">
+          <div class="step5" id="form-step-5">
+            <div class="step5__icon"></div>
+            <h2 class="step5__heading">Thank you!</h2>
+            <p class="step5__context">
               Thanks for confirming your subscription! We hope you have fun using our platform. If
               you ever need support, please feel free to email us at support@loremgaming.com.
             </p>
           </div>
         </section>
+
         <nav class="form__controls">
           <button class="btn" id="form-btn-back" type="button">
             <span class="btn__text-back">Go Back</span>
