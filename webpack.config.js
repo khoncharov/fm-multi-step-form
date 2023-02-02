@@ -39,7 +39,7 @@ const baseConfig = {
       filename: 'index.html',
     }),
     new CopyPlugin({
-      patterns: [{ from: './public/favicon-32x32.png', to: './assets/favicon-32x32.png' }],
+      patterns: [{ from: './src/assets/favicon-32x32.png', to: './assets/favicon-32x32.png' }],
     }),
     new CleanWebpackPlugin(),
   ],
