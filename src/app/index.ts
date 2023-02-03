@@ -1,27 +1,26 @@
-import AppController from './controller/controller';
 import AppView from './view/view';
 import FormWithValidation from './data/form-validation';
 import { FormStep } from './types';
 
 class MultiStepApp {
-  private controller = new AppController();
+  private step: FormStep = FormStep.STEP1;
 
   private view = new AppView();
 
   private data = new FormWithValidation();
 
   constructor() {
-    this.controller.getStep(this.view, FormStep.STEP1);
+    this.getStep(FormStep.STEP1);
   }
 
   init(): void {
     this.view.btnBack.addEventListener('click', () => {
-      this.controller.prevStep(this.view);
+      this.prevStep();
     });
 
     this.view.btnNext.addEventListener('click', () => {
       if (this.data.isValidForm()) {
-        this.controller.nextStep(this.view);
+        this.nextStep();
       }
       this.view.updateUsernameField(this.data);
       this.view.updateEmailField(this.data);
@@ -39,6 +38,25 @@ class MultiStepApp {
     this.view.inputPhone.addEventListener('blur', () => {
       this.view.updatePhoneField(this.data);
     });
+  }
+
+  getStep(step: FormStep): void {
+    this.step = step;
+    this.view.drawStep(this.step);
+  }
+
+  nextStep(): void {
+    if (this.step < 5) {
+      this.step += 1;
+      this.view.drawStep(this.step);
+    }
+  }
+
+  prevStep(): void {
+    if (this.step > 1) {
+      this.step -= 1;
+      this.view.drawStep(this.step);
+    }
   }
 }
 
