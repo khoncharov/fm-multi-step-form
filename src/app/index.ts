@@ -1,5 +1,5 @@
 import AppView from './view';
-import FormWithValidation from './data';
+import DataWithValidation from './data';
 import { FormStep } from './types';
 
 class MultiStepApp {
@@ -7,7 +7,7 @@ class MultiStepApp {
 
   private view = new AppView();
 
-  private data = new FormWithValidation();
+  private data = new DataWithValidation();
 
   constructor() {
     this.getStep(FormStep.STEP1);

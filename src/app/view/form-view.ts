@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import FormWithValidation from '../data';
+import DataWithValidation from '../data';
 import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
 
@@ -16,7 +16,7 @@ export default class FormView {
 
   inputPhoneErr = document.querySelector('#form-input-tel-err') as HTMLInputElement;
 
-  updateUsernameField(data: FormWithValidation): void {
+  updateUsernameField(data: DataWithValidation): void {
     data.name = formatUsername(this.inputName.value);
     this.inputName.value = data.name;
 
@@ -31,7 +31,7 @@ export default class FormView {
     }
   }
 
-  updateEmailField(data: FormWithValidation): void {
+  updateEmailField(data: DataWithValidation): void {
     data.email = formatEmail(this.inputEmail.value);
     this.inputEmail.value = data.email;
 
@@ -46,7 +46,7 @@ export default class FormView {
     }
   }
 
-  updatePhoneField(data: FormWithValidation): void {
+  updatePhoneField(data: DataWithValidation): void {
     data.phone = formatPhone(this.inputPhone.value);
     this.inputPhone.value = data.phone;
 

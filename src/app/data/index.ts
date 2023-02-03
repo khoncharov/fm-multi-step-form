@@ -1,4 +1,4 @@
-import FormDataClass from './form-data';
+import Data from './data';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
@@ -12,7 +12,7 @@ import {
   isInvalidPhone,
 } from './utils';
 
-export default class FormWithValidation extends FormDataClass {
+export default class DataWithValidation extends Data {
   nameValidationErrMsg: string = '';
 
   emailValidationErrMsg: string = '';

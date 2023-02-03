@@ -1,4 +1,4 @@
-import FormWithValidation from '..';
+import DataWithValidation from '..';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
@@ -7,7 +7,7 @@ import {
 } from '../const';
 
 describe('FormValidation Class', () => {
-  const form = new FormWithValidation();
+  const form = new DataWithValidation();
 
   test('Name validation methods', () => {
     form.name = '';

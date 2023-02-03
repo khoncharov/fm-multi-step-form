@@ -6,7 +6,7 @@ import {
   PlanDataType,
 } from '../types';
 
-export default class FormDataClass implements PlanDataType {
+export default class Data implements PlanDataType {
   name: string = '';
 
   email: string = '';
