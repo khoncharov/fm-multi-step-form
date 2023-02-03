@@ -1,6 +1,6 @@
 import { MembershipPlan, AdditionalService } from '../types';
 
-export const plan: MembershipPlan[] = [
+export const MEMBERSHIP: MembershipPlan[] = [
   {
     name: 'Arcade',
     description: '2 months free',
@@ -24,7 +24,7 @@ export const plan: MembershipPlan[] = [
   },
 ];
 
-export const addon: AdditionalService[] = [
+export const ADDON: AdditionalService[] = [
   {
     name: 'Online service',
     description: 'Access to multiplayer games',

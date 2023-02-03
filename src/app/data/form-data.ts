@@ -1,4 +1,4 @@
-import { addon, plan } from './plan-info';
+import { ADDON, MEMBERSHIP } from './plan-info';
 import {
   AdditionalService, //
   MembershipPlan,
@@ -13,11 +13,11 @@ export default class FormDataClass implements PlanDataType {
 
   phone: string = '';
 
-  plan: MembershipPlan = plan[0];
+  plan: MembershipPlan = MEMBERSHIP[0];
 
   paymentPeriod: PaymentPeriod = 'month';
 
-  addons: AdditionalService[] = [addon[0], addon[1]];
+  addons: AdditionalService[] = [ADDON[0], ADDON[1]];
 
   getTotal(): number {
     let sum = 0;
