@@ -5,7 +5,12 @@ import {
   MSG_WRONG_NAME,
   MSG_WRONG_PHONE,
 } from './validation-msg';
-import { isEmptyField, isInvalidEmail, isInvalidName, isInvalidPhone } from './validation-utils';
+import {
+  isEmptyField, //
+  isInvalidEmail,
+  isInvalidName,
+  isInvalidPhone,
+} from './validation-utils';
 
 export default class FormWithValidation extends FormDataClass {
   nameValidationErrMsg: string = '';
@@ -59,7 +64,7 @@ export default class FormWithValidation extends FormDataClass {
     return true;
   }
 
-  isValidUser(): boolean {
+  isValidForm(): boolean {
     const result = this.isValidUserName() && this.isValidEmail() && this.isValidPhone();
     return result;
   }

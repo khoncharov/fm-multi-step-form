@@ -56,7 +56,7 @@ describe('FormValidation Class', () => {
     form.email = '12Joe@tut';
     form.phone = '+1234567890';
 
-    expect(form.isValidUser()).toBeTruthy();
+    expect(form.isValidForm()).toBeTruthy();
     expect(form.nameValidationErrMsg).toBe('');
     expect(form.emailValidationErrMsg).toBe('');
     expect(form.phoneValidationErrMsg).toBe('');
@@ -65,7 +65,7 @@ describe('FormValidation Class', () => {
     form.email = '12tut';
     form.phone = '+1234567890';
 
-    expect(form.isValidUser()).toBeFalsy();
+    expect(form.isValidForm()).toBeFalsy();
     expect(form.nameValidationErrMsg).toBe('');
     expect(form.emailValidationErrMsg).toBe(MSG_WRONG_EMAIL);
     expect(form.phoneValidationErrMsg).toBe('');

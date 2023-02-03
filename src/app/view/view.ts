@@ -3,7 +3,7 @@ import {
   BTN_LABEL_CONFIRM,
   BTN_LABEL_NEXT,
   FORM_STEPS_NUMBER,
-  sideBarActiveClass,
+  SIDEBAR_ACTIVE_CLASS,
 } from '../const';
 import FormView from './form-view';
 import { FormStep } from '../types';
@@ -42,13 +42,13 @@ export default class AppView extends FormView {
 
   updateSidebar(step: FormStep): void {
     this.sidebarNodes.forEach((elem) => {
-      if (elem.classList.contains(sideBarActiveClass)) {
-        elem.classList.remove(sideBarActiveClass);
+      if (elem.classList.contains(SIDEBAR_ACTIVE_CLASS)) {
+        elem.classList.remove(SIDEBAR_ACTIVE_CLASS);
       }
     });
 
     const markerNumber = step === FormStep.STEP5 ? FormStep.STEP4 : step;
-    this.sidebarNodes.item(markerNumber - 1).classList.add(sideBarActiveClass);
+    this.sidebarNodes.item(markerNumber - 1).classList.add(SIDEBAR_ACTIVE_CLASS);
   }
 
   updateBtnBack(step: FormStep): void {

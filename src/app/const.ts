@@ -1,6 +1,6 @@
-export const sideBarActiveClass = 'sidebar-item_active';
+export const SIDEBAR_ACTIVE_CLASS = 'sidebar-item_active';
 
-export const invalidFieldClass = 'invalid-field';
+export const INVALID_FIELD_CLASS = 'invalid-field';
 
 export const btnConfirmClass = 'btn-confirm';
 export const BTN_LABEL_CONFIRM = 'Confirm';

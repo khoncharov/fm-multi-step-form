@@ -2,7 +2,6 @@ import FormDataClass from '../form-data';
 
 describe('Form data class', () => {
   const formData = new FormDataClass();
-  // eslint-disable-next-line prefer-destructuring
 
   test('Total plan cost', () => {
     formData.paymentPeriod = 'month';

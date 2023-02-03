@@ -1,6 +1,6 @@
 export const isEmptyField = (value: string): boolean => !value;
 
-export const isInvalidName = (value: string): boolean => !/^[A-Za-z -]+$/.test(value);
+export const isInvalidName = (value: string): boolean => !/^[A-Za-z -]{3,}$/.test(value);
 
 export const isInvalidEmail = (value: string): boolean => {
   const arr = value.split('@');

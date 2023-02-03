@@ -52,6 +52,8 @@ describe('Form validation rules', () => {
     expect(isInvalidName('name№')).toBeTruthy();
     expect(isInvalidName('name`')).toBeTruthy();
     expect(isInvalidName('name~')).toBeTruthy();
+    expect(isInvalidName('ab')).toBeTruthy();
+    expect(isInvalidName('-')).toBeTruthy();
   });
 
   test('Valid email', () => {
@@ -83,7 +85,7 @@ describe('Form validation rules', () => {
   });
 });
 
-describe('User fields format', () => {
+describe('User fields autoformat', () => {
   test('Username format', () => {
     expect(formatUsername('  some   user --- name  ')).toBe('some user-name');
   });
