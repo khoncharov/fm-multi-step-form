@@ -2,11 +2,11 @@ import {
   formatEmail,
   formatPhone,
   formatUsername,
-  isEmptyField, //
+  isEmptyField,
   isInvalidEmail,
   isInvalidName,
   isInvalidPhone,
-} from '../validation-utils';
+} from '../utils';
 
 describe('Form validation rules', () => {
   test('Empty string', () => {

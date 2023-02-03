@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import FormWithValidation from '../data/form-validation';
-import { formatEmail, formatPhone, formatUsername } from '../data/validation-utils';
+import FormWithValidation from '../data';
+import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
 
 export default class FormView {

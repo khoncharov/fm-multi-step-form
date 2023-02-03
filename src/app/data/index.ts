@@ -1,16 +1,16 @@
 import FormDataClass from './form-data';
 import {
-  MSG_REQUIRED_FIELD,
+  MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
   MSG_WRONG_NAME,
   MSG_WRONG_PHONE,
-} from './validation-msg';
+} from './const';
 import {
   isEmptyField, //
   isInvalidEmail,
   isInvalidName,
   isInvalidPhone,
-} from './validation-utils';
+} from './utils';
 
 export default class FormWithValidation extends FormDataClass {
   nameValidationErrMsg: string = '';

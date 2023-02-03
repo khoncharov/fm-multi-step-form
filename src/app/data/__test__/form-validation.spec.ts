@@ -1,10 +1,10 @@
-import FormWithValidation from '../form-validation';
+import FormWithValidation from '..';
 import {
-  MSG_REQUIRED_FIELD,
+  MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
   MSG_WRONG_NAME,
   MSG_WRONG_PHONE,
-} from '../validation-msg';
+} from '../const';
 
 describe('FormValidation Class', () => {
   const form = new FormWithValidation();
