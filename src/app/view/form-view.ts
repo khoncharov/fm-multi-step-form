@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import DataWithValidation from '../data';
+import DataWithValidation from '../data/data-validation';
 import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
 

@@ -1,5 +1,5 @@
-import AppView from './view';
-import DataWithValidation from './data';
+import AppView from './view/app-view';
+import DataWithValidation from './data/data-validation';
 import { FormStep } from './types';
 
 class MultiStepApp {

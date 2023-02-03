@@ -1,4 +1,4 @@
-import DataWithValidation from '..';
+import DataWithValidation from '../data-validation';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
