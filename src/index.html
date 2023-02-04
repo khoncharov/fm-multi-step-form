@@ -45,6 +45,7 @@
                 id="form-input-name"
                 type="text"
                 placeholder="e.g. Stephen King"
+                value="Joo"
               />
             </div>
             <div class="step1__input-wrapper">
@@ -55,6 +56,7 @@
                 id="form-input-email"
                 type="email"
                 placeholder="e.g. stephenking@lorem.com"
+                value="w@w"
               />
             </div>
             <div class="step1__input-wrapper">
@@ -65,6 +67,7 @@
                 id="form-input-tel"
                 type="tel"
                 placeholder="e.g. +1 234 567 890"
+                value="+1234567890"
               />
             </div>
           </div>
@@ -72,6 +75,38 @@
           <div id="form-step-2">
             <h2 class="step1__heading">Select your plan</h2>
             <p class="step1__context">You have the option of monthly or yearly billing.</p>
+            <fieldset class="plan-selector">
+              <label class="plan-selector__item">
+                <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-1" />
+                <span class="plan-selector__item-icon-arcade"></span>
+                <span class="plan-selector__item-caption">Arcade</span>
+                <span class="plan-selector__item-price">$90/yr</span>
+                <span class="plan-selector__item-info"></span>
+              </label>
+              <label class="plan-selector__item">
+                <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-2" />
+                <span class="plan-selector__item-icon-advanced"></span>
+                <span class="plan-selector__item-caption">Arc222</span>
+                <span class="plan-selector__item-price">$90/yr</span>
+                <span class="plan-selector__item-info">2 month free</span>
+              </label>
+              <label class="plan-selector__item">
+                <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-3" />
+                <span class="plan-selector__item-icon-pro"></span>
+                <span class="plan-selector__item-caption">Arc333</span>
+                <span class="plan-selector__item-price">$90/yr</span>
+                <span class="plan-selector__item-info">2 month free</span>
+              </label>
+            </fieldset>
+            <div class="term">
+              <input class="term__checkbox" type="radio" name="term-selector" id="term-toggle-1" />
+              <input class="term__checkbox" type="radio" name="term-selector" id="term-toggle-2" />
+              <div class="toggle-bg">
+                <div class="toggle-handle"></div>
+              </div>
+              <label class="term__label" for="term-toggle-1" id="term-label-1">Monthly</label>
+              <label class="term__label" for="term-toggle-2" id="term-label-2">Yearly</label>
+            </div>
           </div>
 
           <div id="form-step-3">
