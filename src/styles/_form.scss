@@ -3,7 +3,7 @@
   display: grid;
   grid-template-rows: 9.9rem 7.3rem 1fr 7.2rem;
   grid-template-columns: 1.6rem 1fr 1.6rem;
-  height: 100vh;
+  min-height: 100vh;
 
   @media screen and (min-width: $width-switch-point) {
     place-self: center;
