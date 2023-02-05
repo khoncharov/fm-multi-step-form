@@ -6,7 +6,7 @@ import {
   TPlanData,
   TUserWithValidation,
 } from '../types';
-import UserWithValidation from './data-validation';
+import UserWithValidation from './user';
 
 export default class PlanData implements TPlanData {
   user: TUserWithValidation = new UserWithValidation();

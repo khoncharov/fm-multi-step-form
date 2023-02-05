@@ -1,5 +1,5 @@
 import AppView from './view/app-view';
-import DataWithValidation from './data/data-validation';
+import DataWithValidation from './data/user';
 import { FormStep } from './types';
 
 class MultiStepApp {
@@ -19,7 +19,7 @@ class MultiStepApp {
     });
 
     this.view.btnNext.addEventListener('click', () => {
-      if (this.data.isValidForm()) {
+      if (this.data.isValidUser()) {
         this.nextStep();
       }
       this.view.updateUsernameField(this.data);

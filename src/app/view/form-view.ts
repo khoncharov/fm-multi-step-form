@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import DataWithValidation from '../data/data-validation';
+import DataWithValidation from '../data/user';
 import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
 
@@ -20,7 +20,7 @@ export default class FormView {
     data.name = formatUsername(this.inputName.value);
     this.inputName.value = data.name;
 
-    if (data.isValidUserName()) {
+    if (data.isValidName()) {
       this.inputName.classList.remove(INVALID_FIELD_CLASS);
       this.inputName.setAttribute('aria-invalid', 'false');
       this.inputNameErr.textContent = '';
