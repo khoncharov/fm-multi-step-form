@@ -1,7 +1,7 @@
-import Data from '../data';
+import PlanData from '../data';
 
 describe('Form data class', () => {
-  const formData = new Data();
+  const formData = new PlanData();
 
   test('Total plan cost', () => {
     formData.paymentPeriod = 'month';

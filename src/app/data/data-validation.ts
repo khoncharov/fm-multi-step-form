@@ -1,4 +1,4 @@
-import Data from './data';
+import { TUserWithValidation } from 'app/types';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
@@ -12,14 +12,20 @@ import {
   isInvalidPhone,
 } from './utils';
 
-export default class DataWithValidation extends Data {
+export default class UserWithValidation implements TUserWithValidation {
+  name: string = '';
+
+  email: string = '';
+
+  phone: string = '';
+
   nameValidationErrMsg: string = '';
 
   emailValidationErrMsg: string = '';
 
   phoneValidationErrMsg: string = '';
 
-  isValidUserName(): boolean {
+  isValidName(): boolean {
     if (isEmptyField(this.name)) {
       this.nameValidationErrMsg = MSG_REQUIRED_FIELD;
       return false;
@@ -64,8 +70,8 @@ export default class DataWithValidation extends Data {
     return true;
   }
 
-  isValidForm(): boolean {
-    const result = this.isValidUserName() && this.isValidEmail() && this.isValidPhone();
+  isValidUser(): boolean {
+    const result = this.isValidName() && this.isValidEmail() && this.isValidPhone();
     return result;
   }
 }

@@ -1,73 +1,73 @@
-import DataWithValidation from '../data-validation';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
   MSG_WRONG_NAME,
   MSG_WRONG_PHONE,
 } from '../const';
+import UserWithValidation from '../data-validation';
 
 describe('FormValidation Class', () => {
-  const form = new DataWithValidation();
+  const user = new UserWithValidation();
 
   test('Name validation methods', () => {
-    form.name = '';
-    expect(form.isValidUserName()).toBeFalsy();
-    expect(form.nameValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
+    user.name = '';
+    expect(user.isValidName()).toBeFalsy();
+    expect(user.nameValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
 
-    form.name = '12Joe';
-    expect(form.isValidUserName()).toBeFalsy();
-    expect(form.nameValidationErrMsg).toBe(MSG_WRONG_NAME);
+    user.name = '12Joe';
+    expect(user.isValidName()).toBeFalsy();
+    expect(user.nameValidationErrMsg).toBe(MSG_WRONG_NAME);
 
-    form.name = 'John Smith-Lee';
-    expect(form.isValidUserName()).toBeTruthy();
-    expect(form.nameValidationErrMsg).toBe('');
+    user.name = 'John Smith-Lee';
+    expect(user.isValidName()).toBeTruthy();
+    expect(user.nameValidationErrMsg).toBe('');
   });
 
   test('Email validation methods', () => {
-    form.email = '';
-    expect(form.isValidEmail()).toBeFalsy();
-    expect(form.emailValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
+    user.email = '';
+    expect(user.isValidEmail()).toBeFalsy();
+    expect(user.emailValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
 
-    form.email = '12Joe';
-    expect(form.isValidEmail()).toBeFalsy();
-    expect(form.emailValidationErrMsg).toBe(MSG_WRONG_EMAIL);
+    user.email = '12Joe';
+    expect(user.isValidEmail()).toBeFalsy();
+    expect(user.emailValidationErrMsg).toBe(MSG_WRONG_EMAIL);
 
-    form.email = 'some@email';
-    expect(form.isValidEmail()).toBeTruthy();
-    expect(form.emailValidationErrMsg).toBe('');
+    user.email = 'some@email';
+    expect(user.isValidEmail()).toBeTruthy();
+    expect(user.emailValidationErrMsg).toBe('');
   });
 
   test('Phone validation methods', () => {
-    form.phone = '';
-    expect(form.isValidPhone()).toBeFalsy();
-    expect(form.phoneValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
+    user.phone = '';
+    expect(user.isValidPhone()).toBeFalsy();
+    expect(user.phoneValidationErrMsg).toBe(MSG_REQUIRED_FIELD);
 
-    form.phone = '12Joe';
-    expect(form.isValidPhone()).toBeFalsy();
-    expect(form.phoneValidationErrMsg).toBe(MSG_WRONG_PHONE);
+    user.phone = '12Joe';
+    expect(user.isValidPhone()).toBeFalsy();
+    expect(user.phoneValidationErrMsg).toBe(MSG_WRONG_PHONE);
 
-    form.phone = '+123456789012345';
-    expect(form.isValidPhone()).toBeTruthy();
-    expect(form.phoneValidationErrMsg).toBe('');
+    user.phone = '+123456789012345';
+    expect(user.isValidPhone()).toBeTruthy();
+    expect(user.phoneValidationErrMsg).toBe('');
   });
 
   test('Form validation method', () => {
-    form.name = 'Joo Doe';
-    form.email = '12Joe@tut';
-    form.phone = '+1234567890';
+    user.name = 'Joo Doe';
+    user.email = '12Joe@tut';
+    user.phone = '+1234567890';
 
-    expect(form.isValidForm()).toBeTruthy();
-    expect(form.nameValidationErrMsg).toBe('');
-    expect(form.emailValidationErrMsg).toBe('');
-    expect(form.phoneValidationErrMsg).toBe('');
+    expect(user.isValidUser()).toBeTruthy();
+    expect(user.nameValidationErrMsg).toBe('');
+    expect(user.emailValidationErrMsg).toBe('');
+    expect(user.phoneValidationErrMsg).toBe('');
 
-    form.name = 'Joo Doe';
-    form.email = '12tut';
-    form.phone = '+1234567890';
+    user.name = 'Joo Doe';
+    user.email = '12tut';
+    user.phone = '+1234567890';
 
-    expect(form.isValidForm()).toBeFalsy();
-    expect(form.nameValidationErrMsg).toBe('');
-    expect(form.emailValidationErrMsg).toBe(MSG_WRONG_EMAIL);
-    expect(form.phoneValidationErrMsg).toBe('');
+    expect(user.isValidUser()).toBeFalsy();
+    expect(user.nameValidationErrMsg).toBe('');
+    expect(user.emailValidationErrMsg).toBe(MSG_WRONG_EMAIL);
+    expect(user.phoneValidationErrMsg).toBe('');
   });
 });

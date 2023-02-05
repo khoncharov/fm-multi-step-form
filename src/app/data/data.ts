@@ -1,23 +1,21 @@
 import { ADDON, MEMBERSHIP } from './plan-info';
 import {
-  AdditionalService, //
-  MembershipPlan,
-  PaymentPeriod,
-  PlanDataType,
+  TAdditionalService,
+  TMembershipPlan,
+  TPaymentPeriod,
+  TPlanData,
+  TUserWithValidation,
 } from '../types';
+import UserWithValidation from './data-validation';
 
-export default class Data implements PlanDataType {
-  name: string = '';
+export default class PlanData implements TPlanData {
+  user: TUserWithValidation = new UserWithValidation();
 
-  email: string = '';
+  plan: TMembershipPlan = MEMBERSHIP[0];
 
-  phone: string = '';
+  paymentPeriod: TPaymentPeriod = 'month';
 
-  plan: MembershipPlan = MEMBERSHIP[0];
-
-  paymentPeriod: PaymentPeriod = 'month';
-
-  addons: AdditionalService[] = [ADDON[0], ADDON[1]];
+  addons: TAdditionalService[] = [ADDON[0], ADDON[1]];
 
   getTotal(): number {
     let sum = 0;

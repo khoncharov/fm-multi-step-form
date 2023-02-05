@@ -6,35 +6,45 @@ export enum FormStep {
   STEP5,
 }
 
-export type PaymentPeriod = 'month' | 'year';
+/* Data types */
 
-export type Currency = 'USD' | 'EUR';
-
-export interface MembershipPlan {
-  name: string;
-  description: string;
-  costPerMonth: number;
-  costPerYear: number;
-  currency: Currency;
-}
-
-export interface AdditionalService {
-  name: string;
-  description: string;
-  costPerMonth: number;
-  costPerYear: number;
-  currency: Currency;
-}
-
-export interface User {
+export interface TUser {
   name: string;
   email: string;
   phone: string;
 }
 
-export interface PlanDataType extends User {
-  plan: MembershipPlan;
-  paymentPeriod: PaymentPeriod;
-  addons: AdditionalService[];
+export interface TUserWithValidation extends TUser {
+  isValidName: () => boolean;
+  isValidEmail: () => boolean;
+  isValidPhone: () => boolean;
+  isValidUser: () => boolean;
+}
+
+export type TPaymentPeriod = 'month' | 'year';
+
+export type TCurrency = 'USD' | 'EUR';
+
+export interface TMembershipPlan {
+  name: string;
+  description: string;
+  costPerMonth: number;
+  costPerYear: number;
+  currency: TCurrency;
+}
+
+export interface TAdditionalService {
+  name: string;
+  description: string;
+  costPerMonth: number;
+  costPerYear: number;
+  currency: TCurrency;
+}
+
+export interface TPlanData {
+  user: TUserWithValidation;
+  plan: TMembershipPlan;
+  paymentPeriod: TPaymentPeriod;
+  addons: TAdditionalService[];
   getTotal: () => number;
 }
