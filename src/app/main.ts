@@ -1,13 +1,14 @@
-import AppView from './view/app-view';
-import DataWithValidation from './data/user';
+import { AppView } from './view/app-view';
 import { FormStep } from './types';
+import { TPlanData } from './data/types';
+import { PlanData } from './data/plan-data';
 
 class MultiStepApp {
   private step: FormStep = FormStep.STEP1;
 
   private view = new AppView();
 
-  private data = new DataWithValidation();
+  private data: TPlanData = new PlanData();
 
   constructor() {
     this.getStep(FormStep.STEP1);
@@ -19,7 +20,7 @@ class MultiStepApp {
     });
 
     this.view.btnNext.addEventListener('click', () => {
-      if (this.data.isValidUser()) {
+      if (this.data.user.isValidUser()) {
         this.nextStep();
       }
       this.view.updateUsernameField(this.data);

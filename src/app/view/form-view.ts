@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
-import DataWithValidation from '../data/user';
 import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
+import { TPlanData } from '../data/types';
 
-export default class FormView {
+export class FormView {
   inputName = document.querySelector('#form-input-name') as HTMLInputElement;
 
   inputEmail = document.querySelector('#form-input-email') as HTMLInputElement;
@@ -16,48 +16,48 @@ export default class FormView {
 
   inputPhoneErr = document.querySelector('#form-input-tel-err') as HTMLInputElement;
 
-  updateUsernameField(data: DataWithValidation): void {
-    data.name = formatUsername(this.inputName.value);
-    this.inputName.value = data.name;
+  updateUsernameField(data: TPlanData): void {
+    data.user.name = formatUsername(this.inputName.value);
+    this.inputName.value = data.user.name;
 
-    if (data.isValidName()) {
+    if (data.user.isValidName()) {
       this.inputName.classList.remove(INVALID_FIELD_CLASS);
       this.inputName.setAttribute('aria-invalid', 'false');
       this.inputNameErr.textContent = '';
     } else {
       this.inputName.classList.add(INVALID_FIELD_CLASS);
       this.inputName.setAttribute('aria-invalid', 'true');
-      this.inputNameErr.textContent = data.nameValidationErrMsg;
+      this.inputNameErr.textContent = data.user.nameValidationErrMsg;
     }
   }
 
-  updateEmailField(data: DataWithValidation): void {
-    data.email = formatEmail(this.inputEmail.value);
-    this.inputEmail.value = data.email;
+  updateEmailField(data: TPlanData): void {
+    data.user.email = formatEmail(this.inputEmail.value);
+    this.inputEmail.value = data.user.email;
 
-    if (data.isValidEmail()) {
+    if (data.user.isValidEmail()) {
       this.inputEmail.classList.remove(INVALID_FIELD_CLASS);
       this.inputEmail.setAttribute('aria-invalid', 'false');
       this.inputEmailErr.textContent = '';
     } else {
       this.inputEmail.classList.add(INVALID_FIELD_CLASS);
       this.inputEmail.setAttribute('aria-invalid', 'true');
-      this.inputEmailErr.textContent = data.emailValidationErrMsg;
+      this.inputEmailErr.textContent = data.user.emailValidationErrMsg;
     }
   }
 
-  updatePhoneField(data: DataWithValidation): void {
-    data.phone = formatPhone(this.inputPhone.value);
-    this.inputPhone.value = data.phone;
+  updatePhoneField(data: TPlanData): void {
+    data.user.phone = formatPhone(this.inputPhone.value);
+    this.inputPhone.value = data.user.phone;
 
-    if (data.isValidPhone()) {
+    if (data.user.isValidPhone()) {
       this.inputPhone.classList.remove(INVALID_FIELD_CLASS);
       this.inputPhone.setAttribute('aria-invalid', 'false');
       this.inputPhoneErr.textContent = '';
     } else {
       this.inputPhone.classList.add(INVALID_FIELD_CLASS);
       this.inputPhone.setAttribute('aria-invalid', 'true');
-      this.inputPhoneErr.textContent = data.phoneValidationErrMsg;
+      this.inputPhoneErr.textContent = data.user.phoneValidationErrMsg;
     }
   }
 }

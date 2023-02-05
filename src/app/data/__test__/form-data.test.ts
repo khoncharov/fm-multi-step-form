@@ -1,4 +1,4 @@
-import PlanData from '../plan-data';
+import { PlanData } from '../plan-data';
 
 describe('Form data class', () => {
   const formData = new PlanData();

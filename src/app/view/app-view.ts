@@ -5,10 +5,10 @@ import {
   FORM_STEPS_NUMBER,
   SIDEBAR_ACTIVE_CLASS,
 } from '../const';
-import FormView from './form-view';
+import { FormView } from './form-view';
 import { FormStep } from '../types';
 
-export default class AppView extends FormView {
+export class AppView extends FormView {
   private sidebarNodes = document.querySelectorAll(
     '.sidebar-item__num',
   ) as NodeListOf<HTMLDivElement>;

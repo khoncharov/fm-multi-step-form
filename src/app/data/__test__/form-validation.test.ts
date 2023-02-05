@@ -4,7 +4,7 @@ import {
   MSG_WRONG_NAME,
   MSG_WRONG_PHONE,
 } from '../const';
-import UserWithValidation from '../user';
+import { UserWithValidation } from '../user';
 
 describe('FormValidation Class', () => {
   const user = new UserWithValidation();

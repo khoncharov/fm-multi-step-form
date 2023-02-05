@@ -12,7 +12,7 @@ import {
   isInvalidPhone,
 } from './utils';
 
-export default class UserWithValidation implements TUserWithValidation {
+export class UserWithValidation implements TUserWithValidation {
   name: string = '';
 
   email: string = '';

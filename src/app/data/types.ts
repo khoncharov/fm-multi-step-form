@@ -5,6 +5,9 @@ export interface TUser {
 }
 
 export interface TUserWithValidation extends TUser {
+  nameValidationErrMsg: string;
+  emailValidationErrMsg: string;
+  phoneValidationErrMsg: string;
   isValidName: () => boolean;
   isValidEmail: () => boolean;
   isValidPhone: () => boolean;

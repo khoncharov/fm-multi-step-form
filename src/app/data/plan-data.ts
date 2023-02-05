@@ -6,9 +6,9 @@ import {
   TPlanData,
   TUserWithValidation,
 } from './types';
-import UserWithValidation from './user';
+import { UserWithValidation } from './user';
 
-export default class PlanData implements TPlanData {
+export class PlanData implements TPlanData {
   user: TUserWithValidation = new UserWithValidation();
 
   plan: TMembershipPlan = MEMBERSHIP[0];
