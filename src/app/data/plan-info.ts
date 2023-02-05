@@ -1,4 +1,4 @@
-import { TMembershipPlan, TAdditionalService } from '../types';
+import { TMembershipPlan, TAdditionalService } from './types';
 
 export const MEMBERSHIP: TMembershipPlan[] = [
   {

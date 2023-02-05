@@ -5,7 +5,7 @@ import {
   TPaymentPeriod,
   TPlanData,
   TUserWithValidation,
-} from '../types';
+} from './types';
 import UserWithValidation from './user';
 
 export default class PlanData implements TPlanData {

@@ -1,4 +1,4 @@
-import { TUserWithValidation } from 'app/types';
+import { TUserWithValidation } from './types';
 import {
   MSG_REQUIRED_FIELD, //
   MSG_WRONG_EMAIL,
