@@ -112,11 +112,56 @@
           <div id="form-step-3">
             <h2 class="step1__heading">Pick add-ons</h2>
             <p class="step1__context">Add-ons help enhance your gaming experience.</p>
+            <div class="addon__container">
+              <input class="addon__checkbox" type="checkbox" id="addon-1" />
+              <input class="addon__checkbox" type="checkbox" id="addon-2" />
+              <input class="addon__checkbox" type="checkbox" id="addon-3" />
+              <label class="addon" for="addon-1" id="addon-1-label">
+                <span class="addon__check-mark"></span>
+                <span class="addon__caption">Online service</span>
+                <span class="addon__description">Access to multiplayer games</span>
+                <span class="addon__price">+$1/mo</span>
+              </label>
+              <label class="addon" for="addon-2" id="addon-2-label">
+                <span class="addon__check-mark"></span>
+                <span class="addon__caption">Online service</span>
+                <span class="addon__description">Access to multiplayer games</span>
+                <span class="addon__price">+$1/mo</span>
+              </label>
+              <label class="addon" for="addon-3" id="addon-3-label">
+                <span class="addon__check-mark"></span>
+                <span class="addon__caption">Online service</span>
+                <span class="addon__description">Access to multiplayer games</span>
+                <span class="addon__price">+$1/mo</span>
+              </label>
+            </div>
           </div>
 
           <div id="form-step-4">
             <h2 class="step1__heading">Finishing up</h2>
             <p class="step1__context">Double-check everything looks OK before confirming.</p>
+            <div class="summary">
+              <div class="summary__list">
+                <div class="summary__plan-inner">
+                  <p class="summary__plan">Arcade (Monthly)</p>
+                  <p class="summary__plan-price">$9/mo</p>
+                  <button class="summary__btn" type="button">Change</button>
+                </div>
+                <hr class="summary__divider" />
+                <div class="summary__addon-inner">
+                  <p class="summary__addon">Online service</p>
+                  <p class="summary__addon-price">+$1/mo</p>
+                </div>
+                <div class="summary__addon-inner">
+                  <p class="summary__addon">Larger storage</p>
+                  <p class="summary__addon-price">+$2/mo</p>
+                </div>
+              </div>
+              <div class="summary__total">
+                <p class="summary__total-caption">Total (per month)</p>
+                <p class="summary__total-price">+$12/mo</p>
+              </div>
+            </div>
           </div>
 
           <div class="step5" id="form-step-5">
