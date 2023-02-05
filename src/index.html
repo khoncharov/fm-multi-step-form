@@ -37,6 +37,7 @@
           <div id="form-step-1">
             <h2 class="step1__heading">Personal info</h2>
             <p class="step1__context">Please provide your name, email address, and phone number.</p>
+
             <div class="step1__input-wrapper">
               <label class="step1__input-label" for="form-input-name">Name</label>
               <div class="step1__input-error" id="form-input-name-err"></div>
@@ -75,6 +76,7 @@
           <div id="form-step-2">
             <h2 class="step1__heading">Select your plan</h2>
             <p class="step1__context">You have the option of monthly or yearly billing.</p>
+
             <fieldset class="plan-selector">
               <label class="plan-selector__item">
                 <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-1" />
@@ -112,6 +114,7 @@
           <div id="form-step-3">
             <h2 class="step1__heading">Pick add-ons</h2>
             <p class="step1__context">Add-ons help enhance your gaming experience.</p>
+
             <div class="addon__container">
               <input class="addon__checkbox" type="checkbox" id="addon-1" />
               <input class="addon__checkbox" type="checkbox" id="addon-2" />
@@ -140,27 +143,26 @@
           <div id="form-step-4">
             <h2 class="step1__heading">Finishing up</h2>
             <p class="step1__context">Double-check everything looks OK before confirming.</p>
-            <div class="summary">
-              <div class="summary__list">
-                <div class="summary__plan-inner">
-                  <p class="summary__plan">Arcade (Monthly)</p>
-                  <p class="summary__plan-price">$9/mo</p>
-                  <button class="summary__btn" type="button">Change</button>
-                </div>
-                <hr class="summary__divider" />
-                <div class="summary__addon-inner">
-                  <p class="summary__addon">Online service</p>
-                  <p class="summary__addon-price">+$1/mo</p>
-                </div>
-                <div class="summary__addon-inner">
-                  <p class="summary__addon">Larger storage</p>
-                  <p class="summary__addon-price">+$2/mo</p>
-                </div>
+
+            <div class="summary__list">
+              <div class="summary__plan-inner">
+                <p class="summary__plan">Arcade (Monthly)</p>
+                <p class="summary__plan-price">$9/mo</p>
+                <button class="summary__btn" type="button" id="btn-change-plan">Change</button>
               </div>
-              <div class="summary__total">
-                <p class="summary__total-caption">Total (per month)</p>
-                <p class="summary__total-price">+$12/mo</p>
+              <hr class="summary__divider" />
+              <div class="summary__addon-inner">
+                <p class="summary__addon">Online service</p>
+                <p class="summary__addon-price">+$1/mo</p>
               </div>
+              <div class="summary__addon-inner">
+                <p class="summary__addon">Larger storage</p>
+                <p class="summary__addon-price">+$2/mo</p>
+              </div>
+            </div>
+            <div class="summary__total">
+              <p class="summary__total-caption">Total (per month)</p>
+              <p class="summary__total-price">+$12/mo</p>
             </div>
           </div>
 

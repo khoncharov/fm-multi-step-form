@@ -17,6 +17,8 @@ export default class AppView extends FormView {
 
   public btnNext = document.querySelector('#form-btn-next') as HTMLButtonElement;
 
+  public btnChangePlan = document.querySelector('#btn-change-plan') as HTMLButtonElement;
+
   private formSteps: HTMLElement[];
 
   constructor() {

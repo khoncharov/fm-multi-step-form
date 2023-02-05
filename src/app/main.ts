@@ -38,6 +38,10 @@ class MultiStepApp {
     this.view.inputPhone.addEventListener('blur', () => {
       this.view.updatePhoneField(this.data);
     });
+
+    this.view.btnChangePlan.addEventListener('click', () => {
+      this.getStep(FormStep.STEP2);
+    });
   }
 
   getStep(step: FormStep): void {
