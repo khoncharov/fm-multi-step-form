@@ -28,11 +28,6 @@
     }
   }
 
-  &__item:has(*:checked) {
-    border-color: $purplish-blue;
-    background-color: $alabaster;
-  }
-
   &__item:hover {
     @media screen and (min-width: $width-switch-point) {
       border-color: $purplish-blue;
@@ -40,9 +35,7 @@
   }
 
   &__radio-btn {
-    appearance: none;
-    grid-row: 1;
-    grid-column: 1;
+    display: none;
   }
 
   &__item-icon-arcade,
@@ -103,6 +96,13 @@
   }
 }
 
+#plan-1:checked ~ #plan-1-label,
+#plan-2:checked ~ #plan-2-label,
+#plan-3:checked ~ #plan-3-label {
+  border-color: $marine-blue;
+  background-color: $alabaster;
+}
+
 .term {
   height: 4.8rem;
   margin-top: 2.4rem;
@@ -119,9 +119,7 @@
   }
 
   &__checkbox {
-    appearance: none;
-    grid-row: 1;
-    grid-column: 1;
+    display: none;
   }
 
   &__label {
