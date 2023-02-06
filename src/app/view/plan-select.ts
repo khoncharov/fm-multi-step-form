@@ -1,10 +1,15 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-param-reassign */
-import { DEFAULT_PLAN_INDEX } from '../const';
-import { MEMBERSHIP } from '../data/plan-info';
-import { TPlanData } from '../data/types';
+import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
+import { ADDON, MEMBERSHIP } from '../data/plan-info';
+import { TAdditionalService, TPlanData } from '../data/types';
+import { formatCurrency } from './utils';
 
 export class PlanSelect {
+  private termMonthly = document.querySelector('#term-toggle-1') as HTMLInputElement;
+
+  private termYearly = document.querySelector('#term-toggle-2') as HTMLInputElement;
+
   private planRadioButtons = document.querySelectorAll(
     '.plan-selector__radio-btn',
   ) as NodeListOf<HTMLInputElement>;
@@ -13,9 +18,11 @@ export class PlanSelect {
     '.plan-selector__item',
   ) as NodeListOf<HTMLLabelElement>;
 
-  private termMonthly = document.querySelector('#term-toggle-1') as HTMLInputElement;
+  private addonCheckboxes = document.querySelectorAll(
+    '.addon__checkbox',
+  ) as NodeListOf<HTMLInputElement>;
 
-  private termYearly = document.querySelector('#term-toggle-2') as HTMLInputElement;
+  private addonLabels = document.querySelectorAll('.addon') as NodeListOf<HTMLLabelElement>;
 
   constructor(data: TPlanData) {
     this.planRadioButtons.forEach((btn) => {
@@ -28,14 +35,30 @@ export class PlanSelect {
       });
     });
 
+    this.addonCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        const a: TAdditionalService[] = [];
+
+        this.addonCheckboxes.forEach((item, index) => {
+          if (item.checked) {
+            a.push(ADDON[index]);
+          }
+        });
+
+        data.addons = a;
+      });
+    });
+
     this.termMonthly.addEventListener('change', () => {
       data.paymentPeriod = 'month';
       this.updatePlanCards(data);
+      this.updateAddonsList(data);
     });
 
     this.termYearly.addEventListener('change', () => {
       data.paymentPeriod = 'year';
       this.updatePlanCards(data);
+      this.updateAddonsList(data);
     });
 
     this.init(data);
@@ -43,6 +66,10 @@ export class PlanSelect {
 
   init(data: TPlanData): void {
     this.planRadioButtons.item(DEFAULT_PLAN_INDEX).checked = true;
+
+    DEFAULT_ADDONS.forEach((index) => {
+      this.addonCheckboxes.item(index).checked = true;
+    });
 
     if (data.paymentPeriod === 'month') {
       this.termMonthly.click();
@@ -53,13 +80,9 @@ export class PlanSelect {
 
   updatePlanCards(data: TPlanData): void {
     this.planLabels.forEach((elem, index) => {
-      const fn = new Intl.NumberFormat(undefined, {
-        style: 'currency',
-        currency: data.plan.currency,
-        maximumFractionDigits: 0,
-      });
+      const fn = formatCurrency(data.plan.currency);
 
-      const planPrice =
+      const price =
         data.paymentPeriod === 'year'
           ? `${fn.format(MEMBERSHIP[index].costPerYear)}/yr`
           : `${fn.format(MEMBERSHIP[index].costPerMonth)}/mo`;
@@ -69,8 +92,26 @@ export class PlanSelect {
       elem.innerHTML = `
         <span class="plan-selector__item-${MEMBERSHIP[index].icon}"></span>
         <span class="plan-selector__item-caption">${MEMBERSHIP[index].name}</span>
-        <span class="plan-selector__item-price">${planPrice}</span>
+        <span class="plan-selector__item-price">${price}</span>
         <span class="plan-selector__item-info">${description}</span>`;
+    });
+  }
+
+  updateAddonsList(data: TPlanData): void {
+    this.addonLabels.forEach((elem, index) => {
+      const fn = formatCurrency(data.plan.currency);
+
+      const price =
+        data.paymentPeriod === 'year'
+          ? `${fn.format(ADDON[index].costPerYear)}/yr`
+          : `${fn.format(ADDON[index].costPerMonth)}/mo`;
+
+      elem.innerHTML = `
+        <span class="addon__check-mark"></span>
+        <span class="addon__caption">${ADDON[index].name}</span>
+        <span class="addon__description">${ADDON[index].description}</span>
+        <span class="addon__price">+${price}</span>
+      `;
     });
   }
 }

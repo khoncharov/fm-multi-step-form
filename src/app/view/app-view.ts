@@ -6,9 +6,7 @@ import {
   SIDEBAR_ACTIVE_CLASS,
 } from '../const';
 import { TPlanData } from '../data/types';
-
 import { FormStep } from '../types';
-import { AddonSelect } from './addon-select';
 import { PlanSelect } from './plan-select';
 import { Report } from './report';
 import { UserForm } from './user-form';
@@ -30,8 +28,6 @@ export class AppView {
 
   public planSelect: PlanSelect;
 
-  public addonSelect: AddonSelect;
-
   public report: Report;
 
   constructor(data: TPlanData) {
@@ -44,7 +40,6 @@ export class AppView {
 
     this.userForm = new UserForm(data);
     this.planSelect = new PlanSelect(data);
-    this.addonSelect = new AddonSelect(data);
     this.report = new Report();
   }
 
