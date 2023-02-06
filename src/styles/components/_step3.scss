@@ -103,6 +103,14 @@
   }
 }
 
+.addon:focus-visible {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
+}
+
 #addon-1:checked ~ #addon-1-label .addon__check-mark,
 #addon-2:checked ~ #addon-2-label .addon__check-mark,
 #addon-3:checked ~ #addon-3-label .addon__check-mark {

@@ -79,6 +79,14 @@
     color: $marine-blue;
   }
 
+  &__btn:focus-visible {
+    @media screen and (min-width: $width-switch-point) {
+      color: $purplish-blue;
+      outline: 0.2rem dashed $strawberry-red;
+      outline-offset: 0.2rem;
+    }
+  }
+
   &__divider {
     margin-top: 1.5rem;
     background-color: $light-gray;

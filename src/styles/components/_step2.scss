@@ -34,6 +34,14 @@
     }
   }
 
+  &__item:focus-visible {
+    @media screen and (min-width: $width-switch-point) {
+      border-color: $purplish-blue;
+      outline: 0.2rem dashed $strawberry-red;
+      outline-offset: 0.2rem;
+    }
+  }
+
   &__radio-btn {
     display: none;
   }
@@ -127,6 +135,13 @@
     font-weight: $font-weight-medium;
     letter-spacing: 0.01rem;
     cursor: pointer;
+  }
+
+  &__label:focus-visible {
+    @media screen and (min-width: $width-switch-point) {
+      outline: 0.2rem dashed $strawberry-red;
+      outline-offset: 0.2rem;
+    }
   }
 }
 

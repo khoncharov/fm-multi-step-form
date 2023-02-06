@@ -10,7 +10,7 @@
   <body>
     <div id="app">
       <form class="form" id="form" novalidate autocomplete="off">
-        <ul class="form__sidebar">
+        <ul class="form__sidebar" aria-label="Form steps description">
           <li class="sidebar-item">
             <div class="sidebar-item__num">1</div>
             <div class="sidebar-item__caption">Step 1</div>
@@ -40,35 +40,44 @@
 
             <div class="step1__input-wrapper">
               <label class="step1__input-label" for="form-input-name">Name</label>
-              <div class="step1__input-error" id="form-input-name-err"></div>
+              <div class="step1__input-error" id="form-input-name-err" role="alert"></div>
               <input
                 class="step1__input"
                 id="form-input-name"
                 type="text"
                 placeholder="e.g. Stephen King"
                 value="Joo"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-name-err"
               />
             </div>
             <div class="step1__input-wrapper">
               <label class="step1__input-label" for="form-input-email">Email Address</label>
-              <div class="step1__input-error" id="form-input-email-err"></div>
+              <div class="step1__input-error" id="form-input-email-err" role="alert"></div>
               <input
                 class="step1__input"
                 id="form-input-email"
                 type="email"
                 placeholder="e.g. stephenking@lorem.com"
                 value="w@w"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-email-err"
               />
             </div>
             <div class="step1__input-wrapper">
               <label class="step1__input-label" for="form-input-tel">Phone Number</label>
-              <div class="step1__input-error" id="form-input-tel-err"></div>
+              <div class="step1__input-error" id="form-input-tel-err" role="alert"></div>
               <input
                 class="step1__input"
                 id="form-input-tel"
                 type="tel"
                 placeholder="e.g. +1 234 567 890"
                 value="+1234567890"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-tel-err"
               />
             </div>
           </div>
@@ -77,90 +86,154 @@
             <h2 class="step1__heading">Select your plan</h2>
             <p class="step1__context">You have the option of monthly or yearly billing.</p>
 
-            <fieldset class="plan-selector">
-              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-1" />
-              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-2" />
-              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-3" />
-              <label class="plan-selector__item" for="plan-1" id="plan-1-label">
+            <fieldset class="plan-selector" role="radiogroup" aria-required="true">
+              <input
+                class="plan-selector__radio-btn"
+                type="radio"
+                name="plan-type"
+                id="plan-1"
+                aria-hidden="true"
+              />
+              <input
+                class="plan-selector__radio-btn"
+                type="radio"
+                name="plan-type"
+                id="plan-2"
+                aria-hidden="true"
+              />
+              <input
+                class="plan-selector__radio-btn"
+                type="radio"
+                name="plan-type"
+                id="plan-3"
+                aria-hidden="true"
+              />
+              <label
+                class="plan-selector__item"
+                for="plan-1"
+                id="plan-1-label"
+                role="radio"
+                tabindex="0"
+              >
                 <span class="plan-selector__item-icon-arcade"></span>
                 <span class="plan-selector__item-caption">Arcade</span>
                 <span class="plan-selector__item-price">$90/yr</span>
                 <span class="plan-selector__item-info"></span>
               </label>
-              <label class="plan-selector__item" for="plan-2" id="plan-2-label">
+              <label
+                class="plan-selector__item"
+                for="plan-2"
+                id="plan-2-label"
+                role="radio"
+                tabindex="0"
+              >
                 <span class="plan-selector__item-icon-advanced"></span>
                 <span class="plan-selector__item-caption">Arc222</span>
                 <span class="plan-selector__item-price">$90/yr</span>
                 <span class="plan-selector__item-info">2 month free</span>
               </label>
-              <label class="plan-selector__item" for="plan-3" id="plan-3-label">
+              <label
+                class="plan-selector__item"
+                for="plan-3"
+                id="plan-3-label"
+                role="radio"
+                tabindex="0"
+              >
                 <span class="plan-selector__item-icon-pro"></span>
                 <span class="plan-selector__item-caption">Arc333</span>
                 <span class="plan-selector__item-price">$90/yr</span>
                 <span class="plan-selector__item-info">2 month free</span>
               </label>
             </fieldset>
-            <div class="term">
-              <input class="term__checkbox" type="radio" name="term-selector" id="term-toggle-1" />
-              <input class="term__checkbox" type="radio" name="term-selector" id="term-toggle-2" />
+            <fieldset class="term" role="radiogroup" aria-required="true">
+              <input
+                class="term__checkbox"
+                type="radio"
+                name="term-selector"
+                id="term-toggle-1"
+                aria-hidden="true"
+              />
+              <input
+                class="term__checkbox"
+                type="radio"
+                name="term-selector"
+                id="term-toggle-2"
+                aria-hidden="true"
+              />
               <div class="toggle-bg">
                 <div class="toggle-handle"></div>
               </div>
-              <label class="term__label" for="term-toggle-1" id="term-label-1">Monthly</label>
-              <label class="term__label" for="term-toggle-2" id="term-label-2">Yearly</label>
-            </div>
+              <label
+                class="term__label"
+                for="term-toggle-1"
+                id="term-label-1"
+                role="radio"
+                tabindex="0"
+              >
+                Monthly
+              </label>
+              <label
+                class="term__label"
+                for="term-toggle-2"
+                id="term-label-2"
+                role="radio"
+                tabindex="0"
+              >
+                Yearly
+              </label>
+            </fieldset>
           </div>
 
           <div id="form-step-3">
             <h2 class="step1__heading">Pick add-ons</h2>
             <p class="step1__context">Add-ons help enhance your gaming experience.</p>
 
-            <div class="addon__container">
-              <input class="addon__checkbox" type="checkbox" id="addon-1" />
-              <input class="addon__checkbox" type="checkbox" id="addon-2" />
-              <input class="addon__checkbox" type="checkbox" id="addon-3" />
-              <label class="addon" for="addon-1" id="addon-1-label">
+            <fieldset class="addon__container" role="listbox">
+              <input class="addon__checkbox" type="checkbox" id="addon-1" aria-hidden="true" />
+              <input class="addon__checkbox" type="checkbox" id="addon-2" aria-hidden="true" />
+              <input class="addon__checkbox" type="checkbox" id="addon-3" aria-hidden="true" />
+              <label class="addon" for="addon-1" id="addon-1-label" role="option" tabindex="0">
                 <span class="addon__check-mark"></span>
                 <span class="addon__caption">Online service</span>
                 <span class="addon__description">Access to multiplayer games</span>
                 <span class="addon__price">+$1/mo</span>
               </label>
-              <label class="addon" for="addon-2" id="addon-2-label">
+              <label class="addon" for="addon-2" id="addon-2-label" role="option" tabindex="0">
                 <span class="addon__check-mark"></span>
                 <span class="addon__caption">Online service</span>
                 <span class="addon__description">Access to multiplayer games</span>
                 <span class="addon__price">+$1/mo</span>
               </label>
-              <label class="addon" for="addon-3" id="addon-3-label">
+              <label class="addon" for="addon-3" id="addon-3-label" role="option" tabindex="0">
                 <span class="addon__check-mark"></span>
                 <span class="addon__caption">Online service</span>
                 <span class="addon__description">Access to multiplayer games</span>
                 <span class="addon__price">+$1/mo</span>
               </label>
-            </div>
+            </fieldset>
           </div>
 
           <div id="form-step-4">
             <h2 class="step1__heading">Finishing up</h2>
             <p class="step1__context">Double-check everything looks OK before confirming.</p>
 
-            <div class="summary__list">
-              <div class="summary__plan-inner">
+            <div class="summary__list" aria-label="Plan configuration">
+              <div class="summary__plan-inner" aria-label="Selected plan">
                 <p class="summary__plan">Arcade (Monthly)</p>
                 <p class="summary__plan-price">$9/mo</p>
                 <button class="summary__btn" type="button" id="btn-change-plan">Change</button>
               </div>
               <hr class="summary__divider" />
-              <div class="summary__addon-inner">
+              <div class="summary__addon-inner" aria-label="Selected addon">
                 <p class="summary__addon">Online service</p>
                 <p class="summary__addon-price">+$1/mo</p>
               </div>
-              <div class="summary__addon-inner">
+              <div class="summary__addon-inner" aria-label="Selected addon">
                 <p class="summary__addon">Larger storage</p>
                 <p class="summary__addon-price">+$2/mo</p>
               </div>
             </div>
-            <div class="summary__total">
+            <div class="summary__total" aria-label="Plan cost">
               <p class="summary__total-caption">Total (per month)</p>
               <p class="summary__total-price">+$12/mo</p>
             </div>
