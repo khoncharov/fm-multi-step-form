@@ -3,7 +3,7 @@ import { formatEmail, formatPhone, formatUsername } from '../data/utils';
 import { INVALID_FIELD_CLASS } from '../const';
 import { TPlanData } from '../data/types';
 
-export class FormView {
+export class UserForm {
   inputName = document.querySelector('#form-input-name') as HTMLInputElement;
 
   inputEmail = document.querySelector('#form-input-email') as HTMLInputElement;
@@ -15,6 +15,20 @@ export class FormView {
   inputEmailErr = document.querySelector('#form-input-email-err') as HTMLInputElement;
 
   inputPhoneErr = document.querySelector('#form-input-tel-err') as HTMLInputElement;
+
+  constructor(data: TPlanData) {
+    this.inputName.addEventListener('blur', () => {
+      this.updateUsernameField(data);
+    });
+
+    this.inputEmail.addEventListener('blur', () => {
+      this.updateEmailField(data);
+    });
+
+    this.inputPhone.addEventListener('blur', () => {
+      this.updatePhoneField(data);
+    });
+  }
 
   updateUsernameField(data: TPlanData): void {
     data.user.name = formatUsername(this.inputName.value);

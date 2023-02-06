@@ -6,9 +6,9 @@ import { PlanData } from './data/plan-data';
 class MultiStepApp {
   private step: FormStep = FormStep.STEP1;
 
-  private view = new AppView();
-
   private data: TPlanData = new PlanData();
+
+  private view = new AppView(this.data);
 
   constructor() {
     this.getStep(FormStep.STEP1);
@@ -20,24 +20,13 @@ class MultiStepApp {
     });
 
     this.view.btnNext.addEventListener('click', () => {
+      this.view.userForm.updateUsernameField(this.data);
+      this.view.userForm.updateEmailField(this.data);
+      this.view.userForm.updatePhoneField(this.data);
+
       if (this.data.user.isValidUser()) {
         this.nextStep();
       }
-      this.view.updateUsernameField(this.data);
-      this.view.updateEmailField(this.data);
-      this.view.updatePhoneField(this.data);
-    });
-
-    this.view.inputName.addEventListener('blur', () => {
-      this.view.updateUsernameField(this.data);
-    });
-
-    this.view.inputEmail.addEventListener('blur', () => {
-      this.view.updateEmailField(this.data);
-    });
-
-    this.view.inputPhone.addEventListener('blur', () => {
-      this.view.updatePhoneField(this.data);
     });
 
     this.view.btnChangePlan.addEventListener('click', () => {

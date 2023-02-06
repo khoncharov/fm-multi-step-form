@@ -5,10 +5,15 @@ import {
   FORM_STEPS_NUMBER,
   SIDEBAR_ACTIVE_CLASS,
 } from '../const';
-import { FormView } from './form-view';
-import { FormStep } from '../types';
+import { TPlanData } from '../data/types';
 
-export class AppView extends FormView {
+import { FormStep } from '../types';
+import { AddonSelect } from './addon-select';
+import { PlanSelect } from './plan-select';
+import { Report } from './report';
+import { UserForm } from './user-form';
+
+export class AppView {
   private sidebarNodes = document.querySelectorAll(
     '.sidebar-item__num',
   ) as NodeListOf<HTMLDivElement>;
@@ -21,15 +26,26 @@ export class AppView extends FormView {
 
   private formSteps: HTMLElement[];
 
-  constructor() {
-    super();
+  public userForm: UserForm;
 
+  public planSelect: PlanSelect;
+
+  public addonSelect: AddonSelect;
+
+  public report: Report;
+
+  constructor(data: TPlanData) {
     this.formSteps = Array(FORM_STEPS_NUMBER)
       .fill(0)
       .map((i, index) => {
         const elem = document.querySelector(`#form-step-${index + 1}`) as HTMLElement;
         return elem;
       });
+
+    this.userForm = new UserForm(data);
+    this.planSelect = new PlanSelect(data);
+    this.addonSelect = new AddonSelect(data);
+    this.report = new Report();
   }
 
   drawStep(step: FormStep): void {
