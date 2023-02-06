@@ -45,7 +45,7 @@
 }
 
 .btn-next:active {
-  background-color: $pastel-blue;
+  background-color: $marine-blue-active;
 }
 
 .btn:focus-visible {
@@ -55,4 +55,8 @@
 
 .btn-confirm {
   background-color: $purplish-blue;
+}
+
+.btn-confirm:active {
+  background-color: $pastel-blue;
 }

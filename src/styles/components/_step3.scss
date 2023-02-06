@@ -28,7 +28,8 @@
   }
 
   &__checkbox {
-    display: none;
+    appearance: none;
+    position: absolute;
   }
 
   &__check-mark {
@@ -97,6 +98,16 @@
   background-color: $alabaster;
 }
 
+#addon-1:focus-visible ~ #addon-1-label,
+#addon-2:focus-visible ~ #addon-2-label,
+#addon-3:focus-visible ~ #addon-3-label {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
+}
+
 .addon:hover {
   @media screen and (min-width: $width-switch-point) {
     border-color: $purplish-blue;
@@ -116,7 +127,7 @@
 #addon-3:checked ~ #addon-3-label .addon__check-mark {
   background-color: $purplish-blue;
   border-color: $purplish-blue;
-  background-image: url("./assets/images/icon-check-mark.svg");
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjIiIGQ9Im0xIDQgMy40MzMgMy40MzNMMTAuODY2IDEiLz48L3N2Zz4=);
   background-repeat: no-repeat;
   background-size: 70%;
 }

@@ -34,16 +34,9 @@
     }
   }
 
-  &__item:focus-visible {
-    @media screen and (min-width: $width-switch-point) {
-      border-color: $purplish-blue;
-      outline: 0.2rem dashed $strawberry-red;
-      outline-offset: 0.2rem;
-    }
-  }
-
   &__radio-btn {
-    display: none;
+    appearance: none;
+    position: absolute;
   }
 
   &__item-icon-arcade,
@@ -111,6 +104,16 @@
   background-color: $alabaster;
 }
 
+#plan-1:focus-visible ~ #plan-1-label,
+#plan-2:focus-visible ~ #plan-2-label,
+#plan-3:focus-visible ~ #plan-3-label {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
+}
+
 .term {
   height: 4.8rem;
   margin-top: 2.4rem;
@@ -126,8 +129,9 @@
     padding-inline: 12.7rem 14.1rem;
   }
 
-  &__checkbox {
-    display: none;
+  &__radio-btn {
+    appearance: none;
+    position: absolute;
   }
 
   &__label {
@@ -136,18 +140,20 @@
     letter-spacing: 0.01rem;
     cursor: pointer;
   }
-
-  &__label:focus-visible {
-    @media screen and (min-width: $width-switch-point) {
-      outline: 0.2rem dashed $strawberry-red;
-      outline-offset: 0.2rem;
-    }
-  }
 }
 
 #term-toggle-1:checked ~ #term-label-1,
 #term-toggle-2:checked ~ #term-label-2 {
   color: $marine-blue;
+}
+
+#term-toggle-1:focus-visible ~ #term-label-1,
+#term-toggle-2:focus-visible ~ #term-label-2 {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
 }
 
 #term-label-1 {
@@ -163,20 +169,22 @@
   padding-top: 0.2rem;
 }
 
-.toggle-bg {
-  grid-row: 1;
-  grid-column: 2 / 4;
-  padding: 0.4rem;
-  background-color: $marine-blue;
-  border-radius: 1rem;
-}
+.toggle {
+  &-bg {
+    grid-row: 1;
+    grid-column: 2 / 4;
+    padding: 0.4rem;
+    background-color: $marine-blue;
+    border-radius: 1rem;
+  }
 
-.toggle-handle {
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 50%;
-  background-color: $white;
-  transition: $tr-x1;
+  &-handle {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: $white;
+    transition: $tr-x1;
+  }
 }
 
 #term-toggle-2:checked ~ .toggle-bg > .toggle-handle {
