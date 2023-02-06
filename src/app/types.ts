@@ -5,5 +5,3 @@ export enum FormStep {
   STEP4,
   STEP5,
 }
-
-export const x = 1;

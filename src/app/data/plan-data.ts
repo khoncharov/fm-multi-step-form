@@ -1,3 +1,4 @@
+import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
 import { ADDON, MEMBERSHIP } from './plan-info';
 import {
   TAdditionalService,
@@ -11,11 +12,15 @@ import { UserWithValidation } from './user';
 export class PlanData implements TPlanData {
   user: TUserWithValidation = new UserWithValidation();
 
-  plan: TMembershipPlan = MEMBERSHIP[0];
+  plan: TMembershipPlan = MEMBERSHIP[DEFAULT_PLAN_INDEX];
 
   paymentPeriod: TPaymentPeriod = 'month';
 
-  addons: TAdditionalService[] = [ADDON[0], ADDON[1]];
+  addons: TAdditionalService[] = [];
+
+  constructor() {
+    DEFAULT_ADDONS.forEach((index) => this.addons.push(ADDON[index]));
+  }
 
   getTotal(): number {
     let sum = 0;

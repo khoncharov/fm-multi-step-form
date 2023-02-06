@@ -21,6 +21,7 @@ export type TCurrency = 'USD' | 'EUR';
 export interface TMembershipPlan {
   name: string;
   description: string;
+  icon: string;
   costPerMonth: number;
   costPerYear: number;
   currency: TCurrency;

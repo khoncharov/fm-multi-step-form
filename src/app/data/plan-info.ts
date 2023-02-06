@@ -4,6 +4,7 @@ export const MEMBERSHIP: TMembershipPlan[] = [
   {
     name: 'Arcade',
     description: '2 months free',
+    icon: 'icon-arcade',
     costPerMonth: 9,
     costPerYear: 90,
     currency: 'USD',
@@ -11,6 +12,7 @@ export const MEMBERSHIP: TMembershipPlan[] = [
   {
     name: 'Advanced',
     description: '2 months free',
+    icon: 'icon-advanced',
     costPerMonth: 12,
     costPerYear: 120,
     currency: 'USD',
@@ -18,6 +20,7 @@ export const MEMBERSHIP: TMembershipPlan[] = [
   {
     name: 'Pro',
     description: '2 months free',
+    icon: 'icon-pro',
     costPerMonth: 15,
     costPerYear: 150,
     currency: 'USD',

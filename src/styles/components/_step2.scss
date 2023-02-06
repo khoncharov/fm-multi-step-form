@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1.8rem;
+    min-height: 18.2rem;
   }
 
   &__item {
