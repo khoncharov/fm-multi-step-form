@@ -1,15 +1,8 @@
 # Multi-step form
 
-FrontendMentor.io [challenge](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ)
+This is a solution to the ["Multi-step form"](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ) challenge from FrontendMentor.io.
 
-## Stack
-
-- HTML
-- SCSS
-- TS
-- Webpack
-- ESLint/Prettier
-- JEST
+- Solution [deploy](https://quiet-twilight-a8c987.netlify.app)
 
 ## Challenge description
 
@@ -22,9 +15,16 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-[Challenge page](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ) for more details.
+In addition:
 
-## Features todo
+- Accessibility
+- Keyboard navigation
 
-1. Accessibility check
-2. UML ?
+## Stack
+
+- HTML
+- SCSS
+- TS
+- Webpack
+- ESLint/Prettier
+- Jest
