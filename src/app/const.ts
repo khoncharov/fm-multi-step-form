@@ -10,3 +10,6 @@ export const FORM_STEPS_NUMBER = 5;
 
 export const DEFAULT_PLAN_INDEX = 0;
 export const DEFAULT_ADDONS: number[] = [0, 1];
+
+export const PER_YEAR = '/yr';
+export const PER_MONTH = '/mo';

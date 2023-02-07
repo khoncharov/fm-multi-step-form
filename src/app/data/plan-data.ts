@@ -2,6 +2,7 @@ import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
 import { ADDON, MEMBERSHIP } from './plan-info';
 import {
   TAdditionalService,
+  TCurrency,
   TMembershipPlan,
   TPaymentPeriod,
   TPlanData,
@@ -11,6 +12,8 @@ import { UserWithValidation } from './user';
 
 export class PlanData implements TPlanData {
   user: TUserWithValidation = new UserWithValidation();
+
+  currency: TCurrency = 'USD';
 
   plan: TMembershipPlan = MEMBERSHIP[DEFAULT_PLAN_INDEX];
 

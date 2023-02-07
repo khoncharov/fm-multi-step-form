@@ -40,14 +40,24 @@ class MultiStepApp {
   }
 
   nextStep(): void {
-    if (this.step < 5) {
+    if (this.step < FormStep.STEP5) {
       this.step += 1;
       this.view.drawStep(this.step);
+    }
+
+    if (this.step === FormStep.STEP4) {
+      this.view.report.update(this.data);
+    }
+
+    if (this.step === FormStep.STEP5) {
+      // FOR PRESENTATION
+      // eslint-disable-next-line no-console
+      console.dir(this.data);
     }
   }
 
   prevStep(): void {
-    if (this.step > 1) {
+    if (this.step > FormStep.STEP1) {
       this.step -= 1;
       this.view.drawStep(this.step);
     }

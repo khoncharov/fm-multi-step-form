@@ -54,6 +54,7 @@
   &__btn {
     margin-top: 0.4rem;
     width: fit-content;
+    height: 1.4rem;
     font-size: 1.5rem;
     letter-spacing: -0.05rem;
     color: inherit;
@@ -128,6 +129,21 @@
       font-weight: $font-weight-medium;
       letter-spacing: 0;
     }
+  }
+}
+
+#form-step-4 {
+  position: relative;
+}
+
+#btn-change-plan {
+  position: absolute;
+  top: 14rem;
+  left: 1.7rem;
+
+  @media screen and (min-width: $width-switch-point) {
+    top: 14.4rem;
+    left: 2.4rem;
   }
 }
 

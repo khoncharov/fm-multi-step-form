@@ -1,6 +1,11 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-param-reassign */
-import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
+import {
+  DEFAULT_ADDONS, //
+  DEFAULT_PLAN_INDEX,
+  PER_MONTH,
+  PER_YEAR,
+} from '../const';
 import { ADDON, MEMBERSHIP } from '../data/plan-info';
 import { TAdditionalService, TPlanData } from '../data/types';
 import { formatCurrency } from './utils';
@@ -52,13 +57,13 @@ export class PlanSelect {
     this.termMonthly.addEventListener('change', () => {
       data.paymentPeriod = 'month';
       this.updatePlanCards(data);
-      this.updateAddonsList(data);
+      this.updateAddonList(data);
     });
 
     this.termYearly.addEventListener('change', () => {
       data.paymentPeriod = 'year';
       this.updatePlanCards(data);
-      this.updateAddonsList(data);
+      this.updateAddonList(data);
     });
 
     this.init(data);
@@ -80,12 +85,12 @@ export class PlanSelect {
 
   updatePlanCards(data: TPlanData): void {
     this.planLabels.forEach((elem, index) => {
-      const fn = formatCurrency(data.plan.currency);
+      const fn = formatCurrency(data);
 
       const price =
         data.paymentPeriod === 'year'
-          ? `${fn.format(MEMBERSHIP[index].costPerYear)}/yr`
-          : `${fn.format(MEMBERSHIP[index].costPerMonth)}/mo`;
+          ? `${fn.format(MEMBERSHIP[index].costPerYear)}${PER_YEAR}`
+          : `${fn.format(MEMBERSHIP[index].costPerMonth)}${PER_MONTH}`;
 
       const description = data.paymentPeriod === 'year' ? MEMBERSHIP[index].description : '';
 
@@ -97,14 +102,14 @@ export class PlanSelect {
     });
   }
 
-  updateAddonsList(data: TPlanData): void {
+  updateAddonList(data: TPlanData): void {
     this.addonLabels.forEach((elem, index) => {
-      const fn = formatCurrency(data.plan.currency);
+      const fn = formatCurrency(data);
 
       const price =
         data.paymentPeriod === 'year'
-          ? `${fn.format(ADDON[index].costPerYear)}/yr`
-          : `${fn.format(ADDON[index].costPerMonth)}/mo`;
+          ? `${fn.format(ADDON[index].costPerYear)}${PER_YEAR}`
+          : `${fn.format(ADDON[index].costPerMonth)}${PER_MONTH}`;
 
       elem.innerHTML = `
         <span class="addon__check-mark"></span>

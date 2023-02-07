@@ -1,7 +1,56 @@
+/* eslint-disable operator-linebreak */
+import { PER_MONTH, PER_YEAR } from '../const';
 import { TPlanData } from '../data/types';
+import { formatCurrency } from './utils';
 
 export class Report {
-  // private container = document.querySelector('#form-step-4') as HTMLDivElement;
+  private planList = document.querySelector('.summary__list') as HTMLUListElement;
 
-  update(data: TPlanData): void {}
+  private totalPriceElem = document.querySelector('.summary__total') as HTMLDivElement;
+
+  update(data: TPlanData): void {
+    const fn = formatCurrency(data);
+
+    const divider = '<li class="summary__divider" aria-hidden="true"></li>';
+
+    const periodCapitalized =
+      data.paymentPeriod.slice(0, 1).toUpperCase() + data.paymentPeriod.slice(1);
+
+    const planPrice =
+      data.paymentPeriod === 'year'
+        ? `${fn.format(data.plan.costPerYear)}${PER_YEAR}`
+        : `${fn.format(data.plan.costPerMonth)}${PER_MONTH}`;
+
+    const addonList: string[] = [];
+    data.addons.forEach((addon) => {
+      const addonPrice =
+        data.paymentPeriod === 'year'
+          ? `${fn.format(addon.costPerYear)}${PER_YEAR}`
+          : `${fn.format(addon.costPerMonth)}${PER_MONTH}`;
+
+      addonList.push(`
+        <li class="summary__addon-inner">
+          <p class="summary__addon">${addon.name}</p>
+          <p class="summary__addon-price">+${addonPrice}</p>
+        </li>`);
+    });
+
+    this.planList.innerHTML = `
+      <li class="summary__plan-inner">
+        <p class="summary__plan">${data.plan.name} (${periodCapitalized}ly)</p>
+        <p class="summary__plan-price">${planPrice}</p>
+        <div class="summary__btn"></div>
+      </li>
+      ${data.addons.length === 0 ? '' : divider}
+      ${addonList.join('')}`;
+
+    const totalPrice =
+      data.paymentPeriod === 'year'
+        ? `${fn.format(data.getTotal())}${PER_YEAR}`
+        : `${fn.format(data.getTotal())}${PER_MONTH}`;
+
+    this.totalPriceElem.innerHTML = `
+      <p class="summary__total-caption">Total (per ${data.paymentPeriod})</p>
+      <p class="summary__total-price">${totalPrice}</p>`;
+  }
 }

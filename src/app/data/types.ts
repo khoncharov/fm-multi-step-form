@@ -24,7 +24,6 @@ export interface TMembershipPlan {
   icon: string;
   costPerMonth: number;
   costPerYear: number;
-  currency: TCurrency;
 }
 
 export interface TAdditionalService {
@@ -32,11 +31,11 @@ export interface TAdditionalService {
   description: string;
   costPerMonth: number;
   costPerYear: number;
-  currency: TCurrency;
 }
 
 export interface TPlanData {
   user: TUserWithValidation;
+  currency: TCurrency;
   plan: TMembershipPlan;
   paymentPeriod: TPaymentPeriod;
   addons: TAdditionalService[];

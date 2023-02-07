@@ -1,8 +1,10 @@
 /* eslint-disable implicit-arrow-linebreak */
 
-export const formatCurrency = (currency: string) =>
+import { TPlanData } from '../data/types';
+
+export const formatCurrency = (data: TPlanData) =>
   new Intl.NumberFormat(undefined, {
     style: 'currency',
-    currency,
+    currency: data.currency,
     maximumFractionDigits: 0,
   });
