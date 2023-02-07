@@ -1,8 +1,8 @@
-import app1 from './app/main';
+import app from './app/main';
 import './style.scss';
 
 const bootstrap = () => {
-  app1.init();
+  app.init();
 };
 
 bootstrap();
