@@ -1,14 +1,8 @@
-/* eslint-disable operator-linebreak */
 /* eslint-disable no-param-reassign */
-import {
-  DEFAULT_ADDONS, //
-  DEFAULT_PLAN_INDEX,
-  PER_MONTH,
-  PER_YEAR,
-} from '../const';
+import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
 import { ADDON, MEMBERSHIP } from '../data/plan-info';
 import { TAdditionalService, TPlanData } from '../data/types';
-import { formatCurrency } from './utils';
+import { getItemPrice } from './utils';
 
 export class PlanSelect {
   private termMonthly = document.querySelector('#term-toggle-1') as HTMLInputElement;
@@ -85,12 +79,7 @@ export class PlanSelect {
 
   updatePlanCards(data: TPlanData): void {
     this.planLabels.forEach((elem, index) => {
-      const fn = formatCurrency(data);
-
-      const price =
-        data.paymentPeriod === 'year'
-          ? `${fn.format(MEMBERSHIP[index].costPerYear)}${PER_YEAR}`
-          : `${fn.format(MEMBERSHIP[index].costPerMonth)}${PER_MONTH}`;
+      const price = getItemPrice(MEMBERSHIP[index], data);
 
       const description = data.paymentPeriod === 'year' ? MEMBERSHIP[index].description : '';
 
@@ -104,12 +93,7 @@ export class PlanSelect {
 
   updateAddonList(data: TPlanData): void {
     this.addonLabels.forEach((elem, index) => {
-      const fn = formatCurrency(data);
-
-      const price =
-        data.paymentPeriod === 'year'
-          ? `${fn.format(ADDON[index].costPerYear)}${PER_YEAR}`
-          : `${fn.format(ADDON[index].costPerMonth)}${PER_MONTH}`;
+      const price = getItemPrice(ADDON[index], data);
 
       elem.innerHTML = `
         <span class="addon__check-mark"></span>

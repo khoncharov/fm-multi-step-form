@@ -1,7 +1,5 @@
-/* eslint-disable operator-linebreak */
-import { PER_MONTH, PER_YEAR } from '../const';
 import { TPlanData } from '../data/types';
-import { formatCurrency } from './utils';
+import { getItemPrice } from './utils';
 
 export class Report {
   private planList = document.querySelector('.summary__list') as HTMLUListElement;
@@ -9,24 +7,17 @@ export class Report {
   private totalPriceElem = document.querySelector('.summary__total') as HTMLDivElement;
 
   update(data: TPlanData): void {
-    const fn = formatCurrency(data);
-
     const divider = '<li class="summary__divider" aria-hidden="true"></li>';
 
+    // eslint-disable-next-line operator-linebreak
     const periodCapitalized =
       data.paymentPeriod.slice(0, 1).toUpperCase() + data.paymentPeriod.slice(1);
 
-    const planPrice =
-      data.paymentPeriod === 'year'
-        ? `${fn.format(data.plan.costPerYear)}${PER_YEAR}`
-        : `${fn.format(data.plan.costPerMonth)}${PER_MONTH}`;
+    const planPrice = getItemPrice(data.plan, data);
 
     const addonList: string[] = [];
     data.addons.forEach((addon) => {
-      const addonPrice =
-        data.paymentPeriod === 'year'
-          ? `${fn.format(addon.costPerYear)}${PER_YEAR}`
-          : `${fn.format(addon.costPerMonth)}${PER_MONTH}`;
+      const addonPrice = getItemPrice(addon, data);
 
       addonList.push(`
         <li class="summary__addon-inner">
@@ -44,10 +35,7 @@ export class Report {
       ${data.addons.length === 0 ? '' : divider}
       ${addonList.join('')}`;
 
-    const totalPrice =
-      data.paymentPeriod === 'year'
-        ? `${fn.format(data.getTotal())}${PER_YEAR}`
-        : `${fn.format(data.getTotal())}${PER_MONTH}`;
+    const totalPrice = getItemPrice(data.getTotal(), data);
 
     this.totalPriceElem.innerHTML = `
       <p class="summary__total-caption">Total (per ${data.paymentPeriod})</p>
