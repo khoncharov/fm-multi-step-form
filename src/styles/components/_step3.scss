@@ -1,0 +1,133 @@
+.addon {
+  padding: 1.3rem 1.6rem;
+  display: block;
+  border-radius: 0.8rem;
+  border: 1px solid $light-gray;
+  display: grid;
+  grid-template-columns: 3.6rem 13.7rem 3.3rem 1fr;
+  grid-template-rows: 1fr 1fr;
+  cursor: pointer;
+  transition: $tr-x1;
+
+  @media screen and (min-width: $width-switch-point) {
+    padding: 2rem 2.4rem;
+    min-height: 8.1rem;
+    grid-template-columns: 4.4rem 25.8rem 3.3rem 1fr;
+  }
+
+  &__container {
+    margin-top: 2.1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      row-gap: 1.6rem;
+      margin-top: 3.8rem;
+    }
+  }
+
+  &__checkbox {
+    appearance: none;
+    position: absolute;
+  }
+
+  &__check-mark {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    align-self: center;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid $light-gray;
+    background-position: 0.3rem 0.4rem;
+    transition: $tr-x1;
+  }
+
+  &__caption {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    font-size: 1.5rem;
+    font-weight: $font-weight-medium;
+    letter-spacing: -0.05rem;
+    color: $marine-blue;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 1.6rem;
+      letter-spacing: 0rem;
+    }
+  }
+
+  &__description {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    margin-top: 0.4rem;
+    font-size: 1.3rem;
+    font-weight: $font-weight-regular;
+    letter-spacing: -0.05rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 1.4rem;
+      letter-spacing: 0rem;
+    }
+  }
+
+  &__price {
+    grid-row: 1 / 3;
+    grid-column: 3 / 5;
+    margin-top: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: $font-weight-medium;
+    letter-spacing: -0.05rem;
+    color: $purplish-blue;
+    text-align: end;
+
+    @media screen and (min-width: $width-switch-point) {
+      margin-top: 1.3rem;
+      font-size: 1.4rem;
+      letter-spacing: 0rem;
+    }
+  }
+}
+
+#addon-1:checked ~ #addon-1-label,
+#addon-2:checked ~ #addon-2-label,
+#addon-3:checked ~ #addon-3-label {
+  border-color: $marine-blue;
+  background-color: $alabaster;
+}
+
+#addon-1:focus-visible ~ #addon-1-label,
+#addon-2:focus-visible ~ #addon-2-label,
+#addon-3:focus-visible ~ #addon-3-label {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
+}
+
+.addon:hover {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+  }
+}
+
+.addon:focus-visible {
+  @media screen and (min-width: $width-switch-point) {
+    border-color: $purplish-blue;
+    outline: 0.2rem dashed $strawberry-red;
+    outline-offset: 0.2rem;
+  }
+}
+
+#addon-1:checked ~ #addon-1-label .addon__check-mark,
+#addon-2:checked ~ #addon-2-label .addon__check-mark,
+#addon-3:checked ~ #addon-3-label .addon__check-mark {
+  background-color: $purplish-blue;
+  border-color: $purplish-blue;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjIiIGQ9Im0xIDQgMy40MzMgMy40MzNMMTAuODY2IDEiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: 70%;
+}

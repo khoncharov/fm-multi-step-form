@@ -1,7 +1,8 @@
+import app from './app/main';
 import './style.scss';
 
-const appComponent = document.querySelector('#app') as HTMLElement;
+const bootstrap = () => {
+  app.init();
+};
 
-appComponent.textContent = 'test';
-
-console.log('lint warning');
+bootstrap();

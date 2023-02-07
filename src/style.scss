@@ -1,4 +1,14 @@
-#app {
-  font-size: 32px;
-  background-color: tomato;
-}
+@import "./styles/variables";
+@import "./styles/typography";
+@import "./styles/global";
+
+@import "./styles/form";
+@import "./styles/footer";
+
+@import "./styles/components/sidebar";
+@import "./styles/components/buttons";
+@import "./styles/components/step1";
+@import "./styles/components/step2";
+@import "./styles/components/step3";
+@import "./styles/components/step4";
+@import "./styles/components/step5";

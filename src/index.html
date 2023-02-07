@@ -4,9 +4,168 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>_</title>
+    <title>Frontend Mentor | Multi-step form - step 1</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
   </head>
   <body>
-    <div id="app"></div>
+    <main id="app">
+      <form class="form" id="form" novalidate autocomplete="off">
+        <ul class="form__sidebar" aria-label="Form steps">
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">1</div>
+            <div class="sidebar-item__caption">Step 1</div>
+            <div class="sidebar-item__description">Your info</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">2</div>
+            <div class="sidebar-item__caption">Step 2</div>
+            <div class="sidebar-item__description">Select plan</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">3</div>
+            <div class="sidebar-item__caption">Step 3</div>
+            <div class="sidebar-item__description">Add-ons</div>
+          </li>
+          <li class="sidebar-item">
+            <div class="sidebar-item__num">4</div>
+            <div class="sidebar-item__caption">Step 4</div>
+            <div class="sidebar-item__description">Summary</div>
+          </li>
+        </ul>
+
+        <section class="form__content" aria-live="polite">
+          <div id="form-step-1">
+            <h2 class="step1__heading">Personal info</h2>
+            <p class="step1__context">Please provide your name, email address, and phone number.</p>
+
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-name">Name</label>
+              <div class="step1__input-error" id="form-input-name-err" role="alert"></div>
+              <input
+                class="step1__input"
+                id="form-input-name"
+                type="text"
+                placeholder="e.g. Stephen King"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-name-err"
+              />
+            </div>
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-email">Email Address</label>
+              <div class="step1__input-error" id="form-input-email-err" role="alert"></div>
+              <input
+                class="step1__input"
+                id="form-input-email"
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-email-err"
+              />
+            </div>
+            <div class="step1__input-wrapper">
+              <label class="step1__input-label" for="form-input-tel">Phone Number</label>
+              <div class="step1__input-error" id="form-input-tel-err" role="alert"></div>
+              <input
+                class="step1__input"
+                id="form-input-tel"
+                type="tel"
+                placeholder="e.g. +1 234 567 890"
+                aria-required="true"
+                aria-invalid="false"
+                aria-errormessage="form-input-tel-err"
+              />
+            </div>
+          </div>
+
+          <div id="form-step-2">
+            <h2 class="step1__heading">Select your plan</h2>
+            <p class="step1__context">You have the option of monthly or yearly billing.</p>
+
+            <fieldset
+              class="plan-selector"
+              role="radiogroup"
+              aria-required="true"
+              aria-orientation="horizontal"
+            >
+              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-1" />
+              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-2" />
+              <input class="plan-selector__radio-btn" type="radio" name="plan-type" id="plan-3" />
+              <label class="plan-selector__item" for="plan-1" id="plan-1-label"></label>
+              <label class="plan-selector__item" for="plan-2" id="plan-2-label"></label>
+              <label class="plan-selector__item" for="plan-3" id="plan-3-label"></label>
+            </fieldset>
+            <fieldset
+              class="term"
+              role="radiogroup"
+              aria-required="true"
+              aria-orientation="horizontal"
+            >
+              <input class="term__radio-btn" type="radio" name="term-selector" id="term-toggle-1" />
+              <input class="term__radio-btn" type="radio" name="term-selector" id="term-toggle-2" />
+              <div class="toggle-bg">
+                <div class="toggle-handle"></div>
+              </div>
+              <label class="term__label" for="term-toggle-1" id="term-label-1">Monthly</label>
+              <label class="term__label" for="term-toggle-2" id="term-label-2">Yearly</label>
+            </fieldset>
+          </div>
+
+          <div id="form-step-3">
+            <h2 class="step1__heading">Pick add-ons</h2>
+            <p class="step1__context">Add-ons help enhance your gaming experience.</p>
+
+            <fieldset class="addon__container">
+              <input class="addon__checkbox" type="checkbox" id="addon-1" />
+              <input class="addon__checkbox" type="checkbox" id="addon-2" />
+              <input class="addon__checkbox" type="checkbox" id="addon-3" />
+              <label class="addon" for="addon-1" id="addon-1-label"></label>
+              <label class="addon" for="addon-2" id="addon-2-label"></label>
+              <label class="addon" for="addon-3" id="addon-3-label"></label>
+            </fieldset>
+          </div>
+
+          <div id="form-step-4">
+            <h2 class="step1__heading">Finishing up</h2>
+            <p class="step1__context">Double-check everything looks OK before confirming.</p>
+
+            <ul class="summary__list" aria-label="Selected plan"></ul>
+            <div class="summary__total"></div>
+
+            <button class="summary__btn" type="button" id="btn-change-plan">Change</button>
+          </div>
+
+          <div class="step5" id="form-step-5">
+            <div class="step5__icon"></div>
+            <h2 class="step5__heading">Thank you!</h2>
+            <p class="step5__context">
+              Thanks for confirming your subscription! We hope you have fun using our platform. If
+              you ever need support, please feel free to email us at support@loremgaming.com.
+            </p>
+          </div>
+        </section>
+
+        <nav class="form__controls">
+          <button class="btn" id="form-btn-back" type="button">
+            <span class="btn__text-back">Go Back</span>
+          </button>
+          <button class="btn btn-next" id="form-btn-next" type="button">
+            <span class="btn__text-next">Next Step</span>
+          </button>
+        </nav>
+      </form>
+
+      <div class="attribution">
+        <a
+          title="Challenge page on Frontendmentor.io"
+          href="https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ"
+        >
+          Frontendmentor.io challenge
+        </a>
+        <span> / </span>
+        <a href="https://github.com/khoncharov">My github page</a>
+      </div>
+    </main>
   </body>
 </html>

@@ -1,0 +1,27 @@
+.attribution {
+  display: none;
+
+  @media screen and (min-width: $width-switch-point) {
+    grid-row: 3/4;
+    place-self: flex-end center;
+    display: block;
+    height: 3.2rem;
+  }
+}
+
+.attribution a {
+  color: $cool-gray;
+}
+
+.attribution a:hover {
+  color: $purplish-blue;
+}
+
+.attribution a:active {
+  color: $strawberry-red;
+}
+
+.attribution a:focus-visible {
+  outline: 0.2rem dashed $strawberry-red;
+  outline-offset: 0.2rem;
+}

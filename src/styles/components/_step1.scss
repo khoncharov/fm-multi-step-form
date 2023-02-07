@@ -1,0 +1,103 @@
+.step1 {
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: $font-weight-bold;
+    color: $marine-blue;
+    margin-top: 0.2rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 3.2rem;
+      margin-top: 4.2rem;
+      margin-left: 0.1rem;
+    }
+  }
+
+  &__context {
+    margin-block: 1.1rem 0.5rem;
+    line-height: 1.58;
+
+    @media screen and (min-width: $width-switch-point) {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__input-wrapper {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    grid-template-rows: 3.3rem 4rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      grid-template-columns: 10rem 1fr;
+      grid-template-rows: 4.8rem 4.8rem;
+    }
+  }
+
+  &__input-label {
+    align-self: flex-end;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: $marine-blue;
+    font-weight: $font-weight-medium;
+    letter-spacing: -0.05rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 1.4rem;
+      letter-spacing: -0.02rem;
+      line-height: 2.2;
+    }
+  }
+
+  &__input-error {
+    place-self: end;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: $strawberry-red;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.05rem;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 1.4rem;
+      letter-spacing: 0;
+      line-height: 2.2;
+    }
+  }
+
+  &__input {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $light-gray;
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: $font-weight-medium;
+    text-indent: 1.6rem;
+    color: $marine-blue;
+    transition: $tr-x1;
+
+    @media screen and (min-width: $width-switch-point) {
+      font-size: 1.6rem;
+      border-radius: 8px;
+    }
+  }
+
+  &__input::placeholder {
+    color: $cool-gray;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    border-color: $purplish-blue;
+  }
+}
+
+.invalid-field {
+  border-color: $strawberry-red;
+  background-color: rgba($strawberry-red, 0.02);
+}
+
+.invalid-field:focus,
+.invalid-field:hover {
+  border-color: $strawberry-red;
+  background-color: $white;
+}
