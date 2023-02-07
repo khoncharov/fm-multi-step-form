@@ -5,7 +5,7 @@ export const getItemPrice = (
   item: TMembershipPlan | TAdditionalService | number,
   data: TPlanData,
 ) => {
-  const fn = new Intl.NumberFormat(undefined, {
+  const fn = new Intl.NumberFormat('en', {
     style: 'currency',
     currency: data.currency,
     maximumFractionDigits: 0,

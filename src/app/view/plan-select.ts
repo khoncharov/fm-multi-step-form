@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable no-param-reassign */
 import { DEFAULT_ADDONS, DEFAULT_PLAN_INDEX } from '../const';
 import { ADDON, MEMBERSHIP } from '../data/plan-info';
@@ -81,13 +82,16 @@ export class PlanSelect {
     this.planLabels.forEach((elem, index) => {
       const price = getItemPrice(MEMBERSHIP[index], data);
 
-      const description = data.paymentPeriod === 'year' ? MEMBERSHIP[index].description : '';
+      const description =
+        data.paymentPeriod === 'year'
+          ? `<span class="plan-selector__item-info">${MEMBERSHIP[index].description}</span>`
+          : '';
 
       elem.innerHTML = `
         <span class="plan-selector__item-${MEMBERSHIP[index].icon}"></span>
         <span class="plan-selector__item-caption">${MEMBERSHIP[index].name}</span>
         <span class="plan-selector__item-price">${price}</span>
-        <span class="plan-selector__item-info">${description}</span>`;
+        ${description}`;
     });
   }
 

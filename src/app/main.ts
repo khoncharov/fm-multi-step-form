@@ -50,9 +50,8 @@ class MultiStepApp {
     }
 
     if (this.step === FormStep.STEP5) {
-      // FOR PRESENTATION
       // eslint-disable-next-line no-console
-      console.dir(this.data);
+      console.dir(this.data); // FOR PRESENTATION
     }
   }
 

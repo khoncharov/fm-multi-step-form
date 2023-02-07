@@ -91,12 +91,13 @@
   }
 }
 
-.invalid-field,
-.invalid-field:focus {
-  border-color: $strawberry-red;
-}
-
-.invalid-field:hover {
+.invalid-field {
   border-color: $strawberry-red;
   background-color: rgba($strawberry-red, 0.02);
+}
+
+.invalid-field:focus,
+.invalid-field:hover {
+  border-color: $strawberry-red;
+  background-color: $white;
 }

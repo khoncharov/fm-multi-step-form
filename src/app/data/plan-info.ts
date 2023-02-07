@@ -38,7 +38,7 @@ export const ADDON: TAdditionalService[] = [
     costPerYear: 20,
   },
   {
-    name: 'Customizable Profile',
+    name: 'Customizable profile',
     description: 'Custom theme on your profile',
     costPerMonth: 2,
     costPerYear: 20,
