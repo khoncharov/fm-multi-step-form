@@ -53,7 +53,7 @@ legend {
 #app {
   margin-inline: auto;
   min-width: 34rem;
-  max-width: $width-mobile;
+  max-width: 50rem;
   min-height: 100vh;
 
   @media screen and (min-width: $width-switch-point) {
@@ -62,4 +62,16 @@ legend {
     display: grid;
     grid-template-rows: 1fr 63.2rem 1fr;
   }
+}
+
+.v-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
